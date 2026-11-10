@@ -1,0 +1,47 @@
+name: 招标公告抓取
+
+# 一天两次：北京时间 08:10 / 16:10（GitHub 用 UTC，比北京慢 8 小时）
+# 16:10 这次产出的 data/delta.json 供 17:00 的云函数读取入库并推送
+on:
+  schedule:
+    - cron: '10 0,8 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bid-notices
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 抓取公开公告（11 个湖北来源）
+        run: node scripts/fetch-notices.js
+        env:
+          WINDOW_DAYS: '62'
+          MAX_DETAIL: '40'
+
+      - name: 生成站点数据与增量文件
+        run: node scripts/build-data.js
+
+      - name: 提交数据文件
+        run: |
+          git config user.name "bid-bot"
+          git config user.email "bid-bot@users.noreply.github.com"
+          git add data/notices.json data/delta.json
+          if git diff --cached --quiet; then
+            echo "本轮无变化"
+            exit 0
+          fi
+          git commit --allow-empty-message -m ""
+          git push
