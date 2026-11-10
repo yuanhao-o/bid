@@ -24,8 +24,9 @@ const RAW = path.join(ROOT, 'data', 'raw-notices.json');
 const OUT_JSON = path.join(ROOT, 'data', 'notices.json');
 const OUT_DIR = '';                                         // Actions 不生成导入文件
 const DELTA_OUT = path.join(ROOT, 'data', 'delta.json');     // 云函数只读这份小文件
-const DELTA_HOURS = Math.max(1, parseInt(process.env.DELTA_HOURS, 10) || 26);
-const DELTA_SNAP = 400;                                     // 增量里正文只留 400 字，控制体积
+const DELTA_HOURS = Math.max(1, parseInt(process.env.DELTA_HOURS, 10) || 48);
+const DELTA_SNAP = 0;                                       // 云函数 3 秒预算：增量里不带正文
+const DELTA_MAX = 40;                                       // 只给最新 40 条，文件控制在 15 KB 内
 const SEED_JSON = OUT_JSON;                                 // 用上一版补上超出抓取窗口的历史
 const SKIP_CLOUD = true;                                    // GitHub 上没有云端读取权限
 const FN = path.join(__dirname, 'lib', 'bidFetch.js');
@@ -296,7 +297,9 @@ async function cloudRows() {
     /* 按「日期」比较：不少来源的发布时间只到天（2026-11-09），
        用带时分秒的阈值做字符串比较会把它们整体漏掉 */
     const sinceDate = new Date(Date.now() - DELTA_HOURS * 3600000).toISOString().slice(0, 10);
-    const recent = items.filter((d) => String(d.publishTime || '').slice(0, 10) >= sinceDate).map((d) => Object.assign({}, d, {
+    let recent = items.filter((d) => String(d.publishTime || '').slice(0, 10) >= sinceDate);
+    if (DELTA_MAX) recent = recent.slice(0, DELTA_MAX);   // items 已按发布时间倒序
+    recent = recent.map((d) => Object.assign({}, d, {
       snapshotText: DELTA_SNAP ? String(d.snapshotText || '').slice(0, DELTA_SNAP) : ''
     }));
     fs.mkdirSync(path.dirname(DELTA_OUT), { recursive: true });
