@@ -318,25 +318,12 @@ const SITE_SOURCES = [
   }
 ];
 
-/* ---------------- 中国三峡集团电子采购平台 ----------------
- * 站点是 CMS 静态页（/cms/channel/{栏目}/{id}.htm），栏目直接决定公告类型。
- * 注意：该域名在部分网络（含本机）TLS 握手就被重置，抓取放在 GitHub Actions 上跑；
- * 连不上时只会打印「列表失败」，不影响其它来源。
+/* ---------------- 中国三峡集团电子采购平台（未接入，留档） ----------------
+ * 2026-11-11 实测：本机 TLS 握手直接被重置（Empty reply from server），
+ * GitHub Actions（海外 IP）同样是 `列表失败 0`，两处都拿不到 HTML，
+ * 但通过第三方抓取服务能读到内容 —— 说明是站点按来源网络做的访问控制。
+ * 结论：不突破，不接。想接只能人工在浏览器里看。
  */
-const CTG_HOST = 'https://eps.ctg.com.cn';
-const CTG_CHANNELS = [
-  { path: '1ywgg1', noticeType: '招标公告' },
-  { path: '1ywgg2', noticeType: '澄清公告' },
-  { path: '2ywgg1', noticeType: '采购公告' }
-];
-const CTG_ITEM = /href="(?<url>https?:\/\/eps\.ctg\.com\.cn\/cms\/channel\/(?:1ywgg1|1ywgg2|2ywgg1)\/\d+\.htm)"[^>]*?title="(?<title>[^"]{4,200})"[\s\S]{0,260}?(?<date>20\d{2}-\d{2}-\d{2})/;
-
-SITE_SOURCES.push({
-  code: 'ctg-eps', name: '中国三峡集团电子采购平台', region: '三峡集团（跨省）', noticeType: '招标公告',
-  base: CTG_HOST + '/',
-  listUrls: CTG_CHANNELS.map((c) => ({ url: CTG_HOST + '/cms/channel/' + c.path + '/index.htm', noticeType: c.noticeType })),
-  itemRe: CTG_ITEM
-});
 
 /* ---------------- 湖北省政府采购网 ----------------
  * 栏目 cggg/pzbgg = 招标(采购)公告，每页 16 条，第 N 页 index_N.html。
