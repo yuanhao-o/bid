@@ -17,6 +17,7 @@
 const fs = require('fs');
 const path = require('path');
 const Module = require('module');
+const classify = require('./lib/classify');
 
 const ROOT = path.resolve(__dirname, '..');
 /* 路径可用环境变量覆盖：GitHub Actions 里仓库根目录结构与本地不同 */
@@ -27,8 +28,9 @@ const DELTA_OUT = path.join(ROOT, 'data', 'delta.json');     // 云函数只读�
 const DELTA_HOURS = Math.max(1, parseInt(process.env.DELTA_HOURS, 10) || 40);
 const DELTA_SNAP = 0;                                       // 云函数 3 秒预算：增量里不带正文
 const DELTA_MAX = 24;                                       // 云函数一轮最多入库 20 条，留几条余量抵掉重复
-/* 与云端 bid_subscriptions.keywords 保持一致：增量只投「可能要被推送」的条目 */
-const DEFAULT_PUSH_KEYWORDS = '装饰,装修,维修,改造,改扩建,EPC,总承包';
+/* 推送口径（2026-11-11 用户定）：只推「招标公告 + 房建」。
+   关键词留作第二道可选收窄：不传 PUSH_KEYWORDS（或传空串）= 不按关键词过滤。 */
+const DEFAULT_PUSH_KEYWORDS = '';
 const SEED_JSON = OUT_JSON;                                 // 用上一版补上超出抓取窗口的历史
 const SKIP_CLOUD = true;                                    // GitHub 上没有云端读取权限
 const FN = path.join(__dirname, 'lib', 'bidFetch.js');
@@ -260,7 +262,7 @@ async function cloudRows() {
         if (tenderer) stat.orgFilled++;
       }
 
-      return {
+      const doc = {
         id: d.id,
         title: title,
         titleRaw: title !== rawTitle ? rawTitle : '',
@@ -279,6 +281,11 @@ async function cloudRows() {
         httpStatus: d.httpStatus || 200,
         snapshotText: d.snapshotText || ''
       };
+      /* 类型与行业在这里再算一次：抓取侧已算过，历史数据（以及云端补进来的记录）
+         还是旧的「一律招标公告」，重算一遍才能把「合同信息公示」这类错的标签纠正过来 */
+      doc.noticeType = classify.typeOf(doc);
+      doc.industry = classify.industryOf(doc);
+      return doc;
     })
     .sort((a, b) => String(b.publishTime).localeCompare(String(a.publishTime)));
 
@@ -301,14 +308,25 @@ async function cloudRows() {
     /* 按「日期」比较：不少来源的发布时间只到天（2026-11-09），
        用带时分秒的阈值做字符串比较会把它们整体漏掉 */
     const sinceDate = new Date(Date.now() - DELTA_HOURS * 3600000).toISOString().slice(0, 10);
-    const kws = String(process.env.PUSH_KEYWORDS || DEFAULT_PUSH_KEYWORDS)
+    const kwsRaw = process.env.PUSH_KEYWORDS;
+    const kws = String(kwsRaw === undefined ? DEFAULT_PUSH_KEYWORDS : kwsRaw)
       .split(/[,，\s]+/).map((s) => s.trim()).filter(Boolean);
+    /* 推送口径三道闸（顺序即成本，先便宜后贵）：
+       ① 时间窗  ② 只要招标公告  ③ 只要房建  ④ 可选关键词（不配就不过滤）
+       前两道闸决定「推什么」，是用户 2026-11-11 定的口径：
+       其余公告（中标/评标/答疑/合同公示…）只进网页，不进企微。 */
+    const stat4 = { time: 0, type: 0, industry: 0, kw: 0 };
     let recent = items.filter((d) => {
-      if (String(d.publishTime || '').slice(0, 10) < sinceDate) return false;
-      if (!kws.length) return true;                       // 没配关键词就全给（自建场景兜底）
+      if (String(d.publishTime || '').slice(0, 10) < sinceDate) { stat4.time++; return false; }
+      if (!classify.isTenderNotice(d)) { stat4.type++; return false; }
+      if (!classify.isHouseBuild(d)) { stat4.industry++; return false; }
+      if (!kws.length) return true;
       const hay = String(d.title || '') + ' ' + String(d.summary || '');
-      return kws.some((k) => hay.indexOf(k) >= 0);
+      if (!kws.some((k) => hay.indexOf(k) >= 0)) { stat4.kw++; return false; }
+      return true;
     });
+    console.log('推送闸门：时间窗内被排除 非招标公告 ' + stat4.type + ' 条、非房建 ' + stat4.industry +
+      ' 条' + (kws.length ? '、未命中关键词 ' + stat4.kw + ' 条' : '（未设关键词，不筛）'));
     if (DELTA_MAX) recent = recent.slice(0, DELTA_MAX);   // items 已按发布时间倒序
     /* 只留云函数入库需要的字段：指纹、页面哈希、正文这些都留在网页那份里，
        否则 30 条就有 35 KB，超出云函数 1.5 秒的下载预算 */

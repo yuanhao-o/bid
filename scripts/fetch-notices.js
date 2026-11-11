@@ -15,6 +15,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const classify = require('./lib/classify');
 
 const WINDOW_DAYS = Math.max(1, parseInt(process.env.WINDOW_DAYS, 10) || 62);
 const MAX_DETAIL = Math.max(0, parseInt(process.env.MAX_DETAIL, 10) || 40);
@@ -111,6 +112,13 @@ const ymd = (d) => {
   return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate());
 };
 
+/* 类型与行业统一在这里补：标题关键词 → URL 栏目码 → 列表给的默认值 */
+function decorate(it) {
+  it.noticeType = classify.typeOf(it);
+  it.industry = classify.industryOf(it);
+  return it;
+}
+
 /* ---------------- 湖北：静态列表 6 页 + 详情正文 ---------------- */
 const HUBEI_PAGES = [
   'https://www.hbbidcloud.cn/shengbenji/jyxx/aboutccgs.html',
@@ -135,7 +143,7 @@ async function fetchHubei() {
       if (seen.has(url)) continue;
       seen.add(url);
       const dm = url.match(/\/(\d{4})(\d{2})(\d{2})\//);
-      items.push({
+      items.push(decorate({
         title: m[2].replace(/\s+/g, ' ').trim(),
         url: url,
         publishTime: dm ? dm[1] + '-' + dm[2] + '-' + dm[3] : '',
@@ -143,7 +151,7 @@ async function fetchHubei() {
         region: '湖北',
         noticeType: '招标公告',
         tenderer: ''
-      });
+      }));
       n++;
     }
     console.log('  ' + page.split('/').pop() + ' → ' + n + ' 条');
@@ -190,7 +198,7 @@ async function fetchWuhan(pages) {
       if (x.plannedPeriod) parts.push('工期：' + x.plannedPeriod);
       if (x.evaluationMethodName) parts.push('评标办法：' + x.evaluationMethodName);
       if (x.agencyCorpName) parts.push('招标代理机构：' + x.agencyCorpName);
-      out.push({
+      out.push(decorate({
         title: String(x.tenderPrjName || x.titleName || '').trim(),
         url: url,
         publishTime: String(x.noticeStartDate || '').slice(0, 10),
@@ -199,7 +207,7 @@ async function fetchWuhan(pages) {
         noticeType: '招标公告',
         tenderer: String(x.prjbuildCorpName || ''),
         snapshotText: parts.join(' | ')
-      });
+      }));
     });
     console.log('  武汉第 ' + p + ' 页 → ' + recs.length + ' 条');
     if (recs.length < 10) break;
@@ -310,33 +318,48 @@ const SITE_SOURCES = [
   }
 ];
 
-/* 公告类型：省级子站列表混排「项目报建 / 招标公告 / 评标结果 / 中标结果 / 澄清」，
-   标题里通常写明类型，这里按关键词归类（与前端 typeInfo 的判定口径一致） */
-function guessType(title, fallback) {
-  const t = String(title || '');
-  if (/中标候选/.test(t)) return '中标候选公示';
-  if (/(中标|成交)结果|中标公告|成交公告/.test(t)) return '中标公告';
-  if (/评标结果/.test(t)) return '评标结果公示';
-  if (/答疑/.test(t)) return '答疑公告';
-  if (/澄清/.test(t)) return '澄清公告';
-  if (/更正/.test(t)) return '更正公告';
-  if (/变更/.test(t)) return '变更公告';
-  if (/延期/.test(t)) return '延期公告';
-  if (/流标|废标|采购失败/.test(t)) return '流标公告';
-  if (/终止/.test(t)) return '终止公告';
-  if (/资格预审/.test(t)) return '资格预审公告';
-  if (/单一来源/.test(t)) return '单一来源公示';
-  if (/磋商/.test(t)) return '磋商公告';
-  if (/谈判/.test(t)) return '谈判公告';
-  if (/询价/.test(t)) return '询价公告';
-  if (/竞价/.test(t)) return '竞价公告';
-  if (/比选/.test(t)) return '比选公告';
-  if (/遴选/.test(t)) return '遴选公告';
-  if (/采购公告|采购项目/.test(t)) return '采购公告';
-  if (/项目报建|报建公告/.test(t)) return '项目报建公告';
-  if (/招标公告/.test(t)) return '招标公告';
-  return fallback || '招标公告';
-}
+/* ---------------- 中国三峡集团电子采购平台 ----------------
+ * 站点是 CMS 静态页（/cms/channel/{栏目}/{id}.htm），栏目直接决定公告类型。
+ * 注意：该域名在部分网络（含本机）TLS 握手就被重置，抓取放在 GitHub Actions 上跑；
+ * 连不上时只会打印「列表失败」，不影响其它来源。
+ */
+const CTG_HOST = 'https://eps.ctg.com.cn';
+const CTG_CHANNELS = [
+  { path: '1ywgg1', noticeType: '招标公告' },
+  { path: '1ywgg2', noticeType: '澄清公告' },
+  { path: '2ywgg1', noticeType: '采购公告' }
+];
+const CTG_ITEM = /href="(?<url>https?:\/\/eps\.ctg\.com\.cn\/cms\/channel\/(?:1ywgg1|1ywgg2|2ywgg1)\/\d+\.htm)"[^>]*?title="(?<title>[^"]{4,200})"[\s\S]{0,260}?(?<date>20\d{2}-\d{2}-\d{2})/;
+
+SITE_SOURCES.push({
+  code: 'ctg-eps', name: '中国三峡集团电子采购平台', region: '三峡集团（跨省）', noticeType: '招标公告',
+  base: CTG_HOST + '/',
+  listUrls: CTG_CHANNELS.map((c) => ({ url: CTG_HOST + '/cms/channel/' + c.path + '/index.htm', noticeType: c.noticeType })),
+  itemRe: CTG_ITEM
+});
+
+/* ---------------- 湖北省政府采购网 ----------------
+ * 栏目 cggg/pzbgg = 招标(采购)公告，每页 16 条，第 N 页 index_N.html。
+ * 条目带 [公开招标] / [竞争性磋商] 之类的方式标签，抓下来时去掉，类型交给标题判断。
+ */
+const GOV_PAGES = Math.max(1, parseInt(process.env.GOV_PAGES, 10) || 10);
+const GOV_BASE = 'https://www.ccgp-hubei.gov.cn';
+
+SITE_SOURCES.push({
+  code: 'ccgp-hubei', name: '湖北省政府采购网', region: '湖北', noticeType: '招标公告',
+  base: GOV_BASE + '/',
+  listUrls: Array.from({ length: GOV_PAGES }, (_, i) => ({
+    url: GOV_BASE + '/notice/cggg/pzbgg/index_' + (i + 1) + '.html',
+    noticeType: '招标公告'
+  })),
+  itemRe: /<li><a href="(?<url>\/notice\/\d{6}\/notice_[a-z0-9]+\.html)"[^>]*>(?<text>[\s\S]{4,240}?)<\/a>\s*<span>(?<date>20\d{2}-\d{2}-\d{2})<\/span>/,
+  /* 标题前的 [公开招标] 是采购方式，不属于标题 */
+  titleClean: (s) => String(s || '').replace(/^\s*[[［]?[^\]］]{2,8}[\]］]\s*/, '')
+});
+
+/* 公告类型与行业分类统一走 lib/classify.js：
+   标题关键词 → URL 栏目码 → 列表默认值。以前这里有一套 guessType，
+   现在挪进 classify 与构建脚本共用，避免抓取和构建两边口径打架。 */
 
 /* ---------------- 湖北地市：省公共资源交易云平台的市级子站 ----------------
  * 与省本级同一套模板：/{slug}/jyxx/aboutccgs.html 是第一页，/{slug}/jyxx/{n}.html 是第 n 页。
@@ -374,15 +397,15 @@ async function fetchCitySubsites() {
         const title = htmlToText(m[2]).replace(/\s+/g, ' ').trim();
         if (!title || title.length < 6) continue;
         const url = new URL(m[1], 'https://www.hbbidcloud.cn').toString();
-        out.push({
+        out.push(decorate({
           title: title,
           url: url,
           publishTime: m[3],
           source: s.code,
           region: s.region,
-          noticeType: guessType(title),
+          noticeType: '',
           tenderer: ''
-        });
+        }));
         k++; n++;
       }
       await sleep(250);
@@ -406,7 +429,8 @@ async function fetchSites() {
       let m, k = 0;
       while ((m = re.exec(r.text))) {
         const g = m.groups || {};
-        const title = htmlToText(g.title || g.text || '').replace(/\s+/g, ' ').trim();
+        let title = htmlToText(g.title || g.text || '').replace(/\s+/g, ' ').trim();
+        if (s.titleClean) title = String(s.titleClean(title) || '').trim();
         const href = g.url || m[1] || '';
         if (!title || title.length < 6 || !href) continue;
         let date = g.date || m[3] || '';
@@ -415,7 +439,7 @@ async function fetchSites() {
           const dm = tail.match(/20\d{2}-\d{2}-\d{2}/);
           if (dm) date = dm[0];
         }
-        out.push({
+        out.push(decorate({
           title: title,
           url: new URL(href, s.base).toString(),
           publishTime: date,
@@ -423,7 +447,7 @@ async function fetchSites() {
           region: s.region,
           noticeType: listType,
           tenderer: ''
-        });
+        }));
         k++; n++;
       }
       console.log('  ' + s.name + ' [' + listUrl.replace(/^https?:\/\/[^/]+/, '') + '] → ' + k + ' 条');

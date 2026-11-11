@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: '20'
 
-      - name: 抓取公开公告（22 个湖北来源）
+      - name: 抓取公开公告（22 个湖北来源 + 省政采 + 三峡集团）
         run: node scripts/fetch-notices.js
         env:
           WINDOW_DAYS: '62'
@@ -36,8 +36,11 @@ jobs:
       - name: 生成站点数据与增量文件
         run: node scripts/build-data.js
         env:
-          # 与云端 bid_subscriptions.keywords 保持一致，改关键词时两边都改
-          PUSH_KEYWORDS: '装饰,装修,维修,改造,改扩建,EPC,总承包'
+          # 推送口径已由「招标公告 + 房建」两道闸决定（见 scripts/lib/classify.js）。
+          # 关键词只是可选的第三道收窄：留空 = 不按关键词筛，房建招标公告全给。
+          # 要收窄就填（逗号分隔），并同步改云端 bid_subscriptions 的 keywords，两边必须一致。
+          PUSH_KEYWORDS: ''
+          GOV_PAGES: '10'      # 湖北省政府采购网抓几页（每页 16 条）
 
       - name: 提交数据文件
         run: |
