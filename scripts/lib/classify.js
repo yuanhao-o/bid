@@ -158,22 +158,33 @@ function typeOf(item) {
   return typeFromTitle(it.title) || typeFromCode(codes) || it.noticeType || '招标公告';
 }
 
-/* ---------------- 推送口径：只推「招标公告 + 房建」 ---------------- */
-/* 房建 = 行业判定为「房建」。市政（道路管网）、交通、水利、铁路、土地整治一律不推。 */
+/* ---------------- 推送口径：只推「房建 + 招标/澄清类公告」 ---------------- */
+/* 房建 = 行业判定为「房建」。市政（道路管网）、交通、水利、铁路、土地整治一律不推。
+   类型白名单：招标公告 + 答疑/澄清/更正/变更/补遗。
+   为什么带答疑类：用户 2026-11-11 拍板「已推过的房建项目，之后出答疑/澄清要补推一条」。
+   这些公告本身就挂在房建项目下，行业判定已经把它们圈住了，数量约 0.8 条/天，不会刷屏。
+   中标、评标、合同公示、流标、报建这些仍然只进网页。 */
+const PUSH_TYPES = {
+  '招标公告': 1, '答疑公告': 1, '澄清公告': 1, '更正公告': 1, '变更公告': 1, '补遗公告': 1, '延期公告': 1
+};
+
 function isHouseBuild(item) {
   return industryOf(item) === '房建';
 }
 function isTenderNotice(item) {
   return typeOf(item) === '招标公告';
 }
-/* 推送候选：既要类型对，也要行业对 */
+function isPushType(item) {
+  return !!PUSH_TYPES[typeOf(item)];
+}
+/* 推送候选：类型与行业都过闸 */
 function isPushCandidate(item) {
-  return isTenderNotice(item) && isHouseBuild(item);
+  return isPushType(item) && isHouseBuild(item);
 }
 
 module.exports = {
   parseCodes, typeOf, typeFromTitle, typeFromCode,
   industryOf, industryFromId, industryFromTitle,
-  isHouseBuild, isTenderNotice, isPushCandidate,
-  CAT_TYPE, SUB_INDUSTRY
+  isHouseBuild, isTenderNotice, isPushType, isPushCandidate,
+  CAT_TYPE, SUB_INDUSTRY, PUSH_TYPES
 };

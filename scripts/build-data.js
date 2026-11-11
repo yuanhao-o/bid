@@ -312,20 +312,20 @@ async function cloudRows() {
     const kws = String(kwsRaw === undefined ? DEFAULT_PUSH_KEYWORDS : kwsRaw)
       .split(/[,，\s]+/).map((s) => s.trim()).filter(Boolean);
     /* 推送口径三道闸（顺序即成本，先便宜后贵）：
-       ① 时间窗  ② 只要招标公告  ③ 只要房建  ④ 可选关键词（不配就不过滤）
+       ① 时间窗  ② 类型白名单（招标/答疑/澄清/更正/变更）  ③ 只要房建  ④ 可选关键词
        前两道闸决定「推什么」，是用户 2026-11-11 定的口径：
-       其余公告（中标/评标/答疑/合同公示…）只进网页，不进企微。 */
+       中标、评标、合同公示、报建、流标这些只进网页，不进企微。 */
     const stat4 = { time: 0, type: 0, industry: 0, kw: 0 };
     let recent = items.filter((d) => {
       if (String(d.publishTime || '').slice(0, 10) < sinceDate) { stat4.time++; return false; }
-      if (!classify.isTenderNotice(d)) { stat4.type++; return false; }
+      if (!classify.isPushType(d)) { stat4.type++; return false; }
       if (!classify.isHouseBuild(d)) { stat4.industry++; return false; }
       if (!kws.length) return true;
       const hay = String(d.title || '') + ' ' + String(d.summary || '');
       if (!kws.some((k) => hay.indexOf(k) >= 0)) { stat4.kw++; return false; }
       return true;
     });
-    console.log('推送闸门：时间窗内被排除 非招标公告 ' + stat4.type + ' 条、非房建 ' + stat4.industry +
+    console.log('推送闸门：时间窗内被排除 非推送类型 ' + stat4.type + ' 条、非房建 ' + stat4.industry +
       ' 条' + (kws.length ? '、未命中关键词 ' + stat4.kw + ' 条' : '（未设关键词，不筛）'));
     if (DELTA_MAX) recent = recent.slice(0, DELTA_MAX);   // items 已按发布时间倒序
     /* 只留云函数入库需要的字段：指纹、页面哈希、正文这些都留在网页那份里，
