@@ -295,8 +295,103 @@ const SITE_SOURCES = [
       { url: 'https://cgyztb.jhun.edu.cn/7932/list.htm', noticeType: '成交公告' }
     ],
     itemRe: /<a href='(?<url>[^']+)' target='_blank' title='(?<title>[^']+)'>[\s\S]{0,220}?<\/a><\/span>\s*<span class="fontR news_meta">(?<date>20\d{2}-\d{2}-\d{2})<\/span>/
+  },
+  {
+    /* 荆州：列表是静态 HTML，但栏目分得细，一条配置抓 4 个栏目 */
+    code: 'jingzhou-ggzy', name: '荆州市公共资源交易信息网', region: '湖北荆州', noticeType: '招标公告',
+    base: 'http://www.jzggzy.com',
+    listUrls: [
+      { url: 'http://www.jzggzy.com/jyxx/012001/012001002/moreinfo3.html', noticeType: '招标公告' },
+      { url: 'http://www.jzggzy.com/jyxx/012001/012001004/moreinfo3.html', noticeType: '评标结果公示' },
+      { url: 'http://www.jzggzy.com/jyxx/012001/012001005/moreinfo3.html', noticeType: '中标公告' },
+      { url: 'http://www.jzggzy.com/jyxx/012002/012002001/moreinfo3.html', noticeType: '采购公告' }
+    ],
+    itemRe: /<a href="(?<url>\/jyxx\/[^"]+\/20\d{6}\/[^"]+\.html)"[^>]*title="(?<title>[^"]+)"[\s\S]{0,600}?ewb-ndate">\s*(?<date>20\d{2}-\d{2}-\d{2})/
   }
 ];
+
+/* 公告类型：省级子站列表混排「项目报建 / 招标公告 / 评标结果 / 中标结果 / 澄清」，
+   标题里通常写明类型，这里按关键词归类（与前端 typeInfo 的判定口径一致） */
+function guessType(title, fallback) {
+  const t = String(title || '');
+  if (/中标候选/.test(t)) return '中标候选公示';
+  if (/(中标|成交)结果|中标公告|成交公告/.test(t)) return '中标公告';
+  if (/评标结果/.test(t)) return '评标结果公示';
+  if (/答疑/.test(t)) return '答疑公告';
+  if (/澄清/.test(t)) return '澄清公告';
+  if (/更正/.test(t)) return '更正公告';
+  if (/变更/.test(t)) return '变更公告';
+  if (/延期/.test(t)) return '延期公告';
+  if (/流标|废标|采购失败/.test(t)) return '流标公告';
+  if (/终止/.test(t)) return '终止公告';
+  if (/资格预审/.test(t)) return '资格预审公告';
+  if (/单一来源/.test(t)) return '单一来源公示';
+  if (/磋商/.test(t)) return '磋商公告';
+  if (/谈判/.test(t)) return '谈判公告';
+  if (/询价/.test(t)) return '询价公告';
+  if (/竞价/.test(t)) return '竞价公告';
+  if (/比选/.test(t)) return '比选公告';
+  if (/遴选/.test(t)) return '遴选公告';
+  if (/采购公告|采购项目/.test(t)) return '采购公告';
+  if (/项目报建|报建公告/.test(t)) return '项目报建公告';
+  if (/招标公告/.test(t)) return '招标公告';
+  return fallback || '招标公告';
+}
+
+/* ---------------- 湖北地市：省公共资源交易云平台的市级子站 ----------------
+ * 与省本级同一套模板：/{slug}/jyxx/aboutccgs.html 是第一页，/{slug}/jyxx/{n}.html 是第 n 页。
+ * 列表把报建、招标、评标、中标、澄清混在一起，公告类型交给 guessType 按标题判断。
+ * 每页约 20 条、约 5 天，日常每站抓 3 页（≈15 天）足够，回补时用 CITY_PAGES 调大。
+ */
+const CITY_SUBSITES = [
+  { slug: 'shiyan',      code: 'shiyan-ggzy',      name: '十堰市公共资源交易中心',   region: '湖北十堰' },
+  { slug: 'jingmen',     code: 'jingmen-ggzy',     name: '荆门市公共资源交易中心',   region: '湖北荆门' },
+  { slug: 'xiaogan',     code: 'xiaogan-ggzy',     name: '孝感市公共资源交易信息网', region: '湖北孝感' },
+  { slug: 'huanggang',   code: 'huanggang-ggzy',   name: '黄冈市公共资源交易中心',   region: '湖北黄冈' },
+  { slug: 'xianning',    code: 'xianning-ggzy',    name: '咸宁市公共资源交易信息网', region: '湖北咸宁' },
+  { slug: 'suizhou',     code: 'suizhou-ggzy',     name: '随州市公共资源交易网',     region: '湖北随州' },
+  { slug: 'xiantao',     code: 'xiantao-ggzy',     name: '仙桃市公共资源交易中心',   region: '湖北仙桃' },
+  { slug: 'tianmen',     code: 'tianmen-ggzy',     name: '天门市公共资源交易网',     region: '湖北天门' },
+  { slug: 'qianjiang',   code: 'qianjiang-ggzy',   name: '潜江市公共资源交易中心',   region: '湖北潜江' },
+  { slug: 'shennongjia', code: 'shennongjia-ggzy', name: '神农架林区公共资源交易中心', region: '湖北神农架' }
+];
+const CITY_PAGES = Math.max(1, parseInt(process.env.CITY_PAGES, 10) || 3);
+const HBBID_ITEM = /<a href="(\/[a-z]+\/[^"]*\/20\d{6}\/[^"]+\.html)"[^>]*title="([^"]+)"[\s\S]{0,200}?wb-data-date">\s*(20\d{2}-\d{2}-\d{2})/g;
+
+async function fetchCitySubsites() {
+  const out = [];
+  for (const s of CITY_SUBSITES) {
+    let n = 0;
+    for (let p = 1; p <= CITY_PAGES; p++) {
+      const listUrl = p === 1
+        ? 'https://www.hbbidcloud.cn/' + s.slug + '/jyxx/aboutccgs.html'
+        : 'https://www.hbbidcloud.cn/' + s.slug + '/jyxx/' + p + '.html';
+      const r = await httpGet(listUrl, 20000, true);
+      if (!r.ok) { console.log('  ' + s.name + ' 第 ' + p + ' 页失败 ' + r.status); break; }
+      const re = new RegExp(HBBID_ITEM.source, 'g');
+      let m, k = 0;
+      while ((m = re.exec(r.text))) {
+        const title = htmlToText(m[2]).replace(/\s+/g, ' ').trim();
+        if (!title || title.length < 6) continue;
+        const url = new URL(m[1], 'https://www.hbbidcloud.cn').toString();
+        out.push({
+          title: title,
+          url: url,
+          publishTime: m[3],
+          source: s.code,
+          region: s.region,
+          noticeType: guessType(title),
+          tenderer: ''
+        });
+        k++; n++;
+      }
+      await sleep(250);
+      if (!k) break;
+    }
+    console.log('  ' + s.name + ' → ' + n + ' 条（' + CITY_PAGES + ' 页上限）');
+  }
+  return out;
+}
 
 async function fetchSites() {
   const out = [];
@@ -353,12 +448,15 @@ async function fetchSites() {
 
   const hb = await fetchHubei();
   const wh = await fetchWuhan(3);
+  const city = await fetchCitySubsites();
   const sites = await fetchSites();
+  console.log('来源合计：省本级 ' + hb.items.length + ' / 武汉 ' + wh.length +
+    ' / 地市 ' + city.length + ' / 高校与单位 ' + sites.length);
 
   // 合并：新抓的覆盖旧条目，但保留已有 snapshotText（避免重复抓正文）
   const map = new Map();
   prev.forEach((x) => { if (x && x.url) map.set(x.url, x); });
-  [...hb.items, ...wh, ...sites].forEach((x) => {
+  [...hb.items, ...wh, ...city, ...sites].forEach((x) => {
     if (!x || !x.url || !x.title) return;
     const old = map.get(x.url) || {};
     map.set(x.url, Object.assign({}, old, x, {
@@ -372,11 +470,18 @@ async function fetchSites() {
   });
   all.sort((a, b) => String(b.publishTime).localeCompare(String(a.publishTime)));
 
-  // 补详情：只补最近 3 天、还没有正文的湖北条目，单轮上限 MAX_DETAIL
+  // 补详情：只补最近 3 天、还没有正文的条目；每个来源最多 5 条，避免某个站占满配额
   const recent = ymd(new Date(Date.now() - 3 * 86400000));
-  const DETAIL_SOURCES = ['hbbidcloud', 'whu-zb', 'hust-cgzx'];
-  const need = all.filter((x) => DETAIL_SOURCES.indexOf(x.source) >= 0 && !x.snapshotText &&
-    String(x.publishTime || '') >= recent).slice(0, MAX_DETAIL);
+  const DETAIL_SOURCES = ['hbbidcloud', 'whu-zb', 'hust-cgzx', 'jingzhou-ggzy'];
+  CITY_SUBSITES.forEach((s) => DETAIL_SOURCES.push(s.code));
+  const quota = {};
+  const need = all.filter((x) => {
+    if (DETAIL_SOURCES.indexOf(x.source) < 0) return false;
+    if (x.snapshotText) return false;
+    if (String(x.publishTime || '') < recent) return false;
+    quota[x.source] = (quota[x.source] || 0) + 1;
+    return quota[x.source] <= 5;
+  }).slice(0, MAX_DETAIL);
   console.log('待补详情 ' + need.length + ' 条');
   let done = 0;
   for (let i = 0; i < need.length; i += 3) {

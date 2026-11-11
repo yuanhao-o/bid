@@ -24,9 +24,11 @@ const RAW = path.join(ROOT, 'data', 'raw-notices.json');
 const OUT_JSON = path.join(ROOT, 'data', 'notices.json');
 const OUT_DIR = '';                                         // Actions 不生成导入文件
 const DELTA_OUT = path.join(ROOT, 'data', 'delta.json');     // 云函数只读这份小文件
-const DELTA_HOURS = Math.max(1, parseInt(process.env.DELTA_HOURS, 10) || 48);
+const DELTA_HOURS = Math.max(1, parseInt(process.env.DELTA_HOURS, 10) || 40);
 const DELTA_SNAP = 0;                                       // 云函数 3 秒预算：增量里不带正文
-const DELTA_MAX = 40;                                       // 只给最新 40 条，文件控制在 15 KB 内
+const DELTA_MAX = 24;                                       // 云函数一轮最多入库 20 条，留几条余量抵掉重复
+/* 与云端 bid_subscriptions.keywords 保持一致：增量只投「可能要被推送」的条目 */
+const DEFAULT_PUSH_KEYWORDS = '装饰,装修,维修,改造,改扩建,EPC,总承包';
 const SEED_JSON = OUT_JSON;                                 // 用上一版补上超出抓取窗口的历史
 const SKIP_CLOUD = true;                                    // GitHub 上没有云端读取权限
 const FN = path.join(__dirname, 'lib', 'bidFetch.js');
@@ -291,20 +293,41 @@ async function cloudRows() {
   };
   fs.writeFileSync(OUT_JSON, JSON.stringify(payload, null, 1) + '\n', 'utf8');
 
-  /* 增量文件：只留最近 N 小时发布的条目。云函数 3 秒预算读不了整份 800KB，
-     读这个几十 KB 的小文件才稳；云侧按「来源+链接」去重，重复读不会重复入库。 */
+  /* 增量文件（给云函数读）：只留「最近 N 小时 + 命中推送关键词」的条目。
+     原因：云函数固定 3 秒超时，一轮最多读 30 KB、最多入库 20 条；
+     全量每天 70–120 条根本喂不进去。云端的库只承担「企微推送候选池」这一个职责，
+     网页那份 data/notices.json 才是全量。云侧按「来源+链接」去重，重复读不会重复入库。 */
   if (DELTA_OUT) {
     /* 按「日期」比较：不少来源的发布时间只到天（2026-11-09），
        用带时分秒的阈值做字符串比较会把它们整体漏掉 */
     const sinceDate = new Date(Date.now() - DELTA_HOURS * 3600000).toISOString().slice(0, 10);
-    let recent = items.filter((d) => String(d.publishTime || '').slice(0, 10) >= sinceDate);
+    const kws = String(process.env.PUSH_KEYWORDS || DEFAULT_PUSH_KEYWORDS)
+      .split(/[,，\s]+/).map((s) => s.trim()).filter(Boolean);
+    let recent = items.filter((d) => {
+      if (String(d.publishTime || '').slice(0, 10) < sinceDate) return false;
+      if (!kws.length) return true;                       // 没配关键词就全给（自建场景兜底）
+      const hay = String(d.title || '') + ' ' + String(d.summary || '');
+      return kws.some((k) => hay.indexOf(k) >= 0);
+    });
     if (DELTA_MAX) recent = recent.slice(0, DELTA_MAX);   // items 已按发布时间倒序
-    recent = recent.map((d) => Object.assign({}, d, {
-      snapshotText: DELTA_SNAP ? String(d.snapshotText || '').slice(0, DELTA_SNAP) : ''
+    /* 只留云函数入库需要的字段：指纹、页面哈希、正文这些都留在网页那份里，
+       否则 30 条就有 35 KB，超出云函数 1.5 秒的下载预算 */
+    recent = recent.map((d) => ({
+      id: d.id,
+      title: d.title,
+      url: d.url,
+      normalizedUrl: d.normalizedUrl || d.url,
+      source: d.source,
+      region: d.region || '',
+      industry: d.industry || '',
+      noticeType: d.noticeType || '',
+      tenderer: d.tenderer || '',
+      publishTime: d.publishTime || '',
+      summary: String(d.summary || '').slice(0, 140)
     }));
     fs.mkdirSync(path.dirname(DELTA_OUT), { recursive: true });
-    fs.writeFileSync(DELTA_OUT, JSON.stringify({ generatedAt: nowCn, since: sinceDate, count: recent.length, items: recent }, null, 1) + '\n', 'utf8');
-    console.log('增量 ' + recent.length + ' 条（' + sinceDate + ' 起）→ ' + DELTA_OUT +
+    fs.writeFileSync(DELTA_OUT, JSON.stringify({ generatedAt: nowCn, since: sinceDate, keywords: kws, count: recent.length, items: recent }, null, 1) + '\n', 'utf8');
+    console.log('增量 ' + recent.length + ' 条（' + sinceDate + ' 起，命中 ' + kws.join('/') + '）→ ' + DELTA_OUT +
       '，' + Math.round(fs.statSync(DELTA_OUT).size / 1024) + ' KB');
   }
 
