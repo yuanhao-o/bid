@@ -410,7 +410,8 @@ async function fetchSites() {
     for (const item of s.listUrls) {
       const listUrl = typeof item === 'string' ? item : item.url;
       const listType = (typeof item === 'object' && item.noticeType) || s.noticeType;
-      const r = await httpGet(listUrl, 20000, true);
+      let r = await httpGet(listUrl, 20000, true);
+      if (!r.ok) { await sleep(900); r = await httpGet(listUrl, 20000, true); }
       if (!r.ok) { console.log('  ' + s.name + ' 列表失败 ' + r.status + ' ' + listUrl); continue; }
       const re = new RegExp(s.itemRe.source, 'g');
       let m, k = 0;
