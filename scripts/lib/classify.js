@@ -48,6 +48,24 @@ function parseCodes(url) {
   return { cat: m[1], sub: m[2].slice(6), full: m[1] + m[2].slice(6) };
 }
 
+/* ---------------- 来源主体：自建平台的招标人就是平台自己 ---------------- */
+/* 高校自建的采购/招投标平台，公告由学校自己发布，招标人即该学校；
+   省/市公共资源交易平台是第三方交易场所，招标人是具体公司或代理机构，不能套用这个兜底。 */
+const SOURCE_OWNER = {
+  'whu-zb': '武汉大学',
+  'hust-cgzx': '华中科技大学',
+  'whut-cgyztb': '武汉理工大学',
+  'wust-cgpt': '武汉科技大学',
+  'cug-cggl': '中国地质大学（武汉）',
+  'ccnu-zb': '华中师范大学',
+  'hzau-ztb': '华中农业大学',
+  'hubu-ztb': '湖北大学',
+  'jhun-cgyztb': '江汉大学'
+};
+function ownerOf(source) {
+  return SOURCE_OWNER[String(source || '')] || '';
+}
+
 /* ---------------- 标题关键词（顺序即优先级） ---------------- */
 const TITLE_RULES = [
   [/合同(信息)?(公示|公告|公开)/, '合同信息公示'],
@@ -55,7 +73,7 @@ const TITLE_RULES = [
   [/(终止|撤销|中止)(公告|公示|通知)?\s*$/, '终止公告'],
   [/中标候选/, '中标候选公示'],
   [/评标结果|评标公示/, '评标结果公示'],
-  [/(中标结果|中标公告|中标公示|中标通知|成交结果|成交公告|中选结果|中选公示)/, '中标公告'],
+  [/(中标结果|中标公告|中标公示|中标通知|成交结果|成交公告|中选结果|中选公示|结果公告|结果公示)/, '中标公告'],
   [/资格预审|资格后审|资审/, '资格预审公告'],
   [/(第\s*\d+\s*次)?\s*答疑/, '答疑公告'],
   [/澄清|补遗/, '澄清公告'],
@@ -185,6 +203,7 @@ function isPushCandidate(item) {
 module.exports = {
   parseCodes, typeOf, typeFromTitle, typeFromCode,
   industryOf, industryFromId, industryFromTitle,
+  ownerOf,
   isHouseBuild, isTenderNotice, isPushType, isPushCandidate,
-  CAT_TYPE, SUB_INDUSTRY, PUSH_TYPES
+  CAT_TYPE, SUB_INDUSTRY, PUSH_TYPES, SOURCE_OWNER
 };

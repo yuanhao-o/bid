@@ -44,11 +44,12 @@ function key(d) {
 
 /* ---------------- 标题清洗：去栏目前缀 / 去重复段 / 去状态后缀 ---------------- */
 const TITLE_PREFIX = /^【(?:湖北省中心|分散采购备案单|快速采购|单一来源|货物|工程|服务)】\s*/;
+const TITLE_NEW = /^[（(]新[）)]\s*/;
 const TITLE_STATUS = /\s*[\[【](?:文件获取中|已结束|报名中|进行中|已截止|已开标|待开标|中标公示中)[\]】]\s*$/;
 
 function cleanTitle(raw) {
   const origin = String(raw || '').replace(/\s+/g, ' ').trim();
-  let s = origin.replace(TITLE_PREFIX, '').replace(TITLE_STATUS, '').trim();
+  let s = origin.replace(TITLE_NEW, '').replace(TITLE_PREFIX, '').replace(TITLE_STATUS, '').trim();
   /* 源站把「项目名」拼了两遍：找最长的「前缀自我重复」并删掉一份 */
   for (let i = Math.floor(s.length / 2); i >= 10; i--) {
     const a = s.slice(0, i);
@@ -247,7 +248,7 @@ async function cloudRows() {
   });
   console.log('云端 ' + cloud.length + ' 条，其中补充 ' + added + ' 条');
 
-  const stat = { titleChanged: 0, orgFilled: 0, orgDropped: 0 };
+  const stat = { titleChanged: 0, orgFilled: 0, orgDropped: 0, orgFromSource: 0 };
   const items = [...merged.values()]
     .filter((d) => d.title && d.url)
     .map((d) => {
@@ -256,10 +257,20 @@ async function cloudRows() {
       if (title !== rawTitle) stat.titleChanged++;
 
       let tenderer = String(d.tenderer || '').trim();
+      let tendererFrom = '';
       if (!isValidOrg(tenderer)) {
         if (tenderer && tenderer !== '—') stat.orgDropped++;
         tenderer = findOrg(d.snapshotText || '');
         if (tenderer) stat.orgFilled++;
+      }
+      /* 高校自建平台：公告由学校自己发，招标人就是这所学校 */
+      if (!tenderer) {
+        const owner = classify.ownerOf(d.source);
+        if (owner) {
+          tenderer = owner;
+          tendererFrom = 'platform';
+          stat.orgFromSource++;
+        }
       }
 
       const doc = {
@@ -269,6 +280,7 @@ async function cloudRows() {
         url: d.url,
         source: d.source,
         tenderer: tenderer || '—',
+        tendererFrom: tendererFrom,
         publishTime: String(d.publishTime || '').slice(0, 16),
         collectTime: d.collectTime || '',
         summary: scrubSummary(d.summary),
@@ -378,6 +390,7 @@ async function cloudRows() {
   console.log('站点数据 ' + items.length + ' 条 → ' + OUT_JSON);
   console.log('时间范围 ' + dates[0] + ' ~ ' + dates[dates.length - 1]);
   console.log('标题清洗 ' + stat.titleChanged + ' 条，单位补全 ' + stat.orgFilled + ' 条，丢弃错值 ' + stat.orgDropped + ' 条');
+  console.log('单位按平台主体兜底 ' + stat.orgFromSource + ' 条');
   console.log('有单位 ' + items.filter((d) => d.tenderer && d.tenderer !== '—').length + ' 条');
   console.log('带摘要 ' + items.filter((d) => d.summary).length + '，带正文 ' + items.filter((d) => d.snapshotText).length);
   console.log('来源 ' + JSON.stringify(bySrc));
