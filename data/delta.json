@@ -1,4 +1,5 @@
 {
+<<<<<<< Updated upstream
  "generatedAt": "2026-11-12 23:58",
  "since": "2026-11-10",
  "keywords": [],
@@ -6,11 +7,35 @@
  "items": [
   {
    "id": "761b1bf5ba7d6669",
+=======
+ "generatedAt": "2026-11-13 13:47",
+ "since": "2026-11-11",
+ "keywords": [],
+ "count": 11,
+ "items": [
+  {
+   "id": "cc465f563012ca97",
+   "title": "【HSCFC14-20260707】协同创新中心空间改造项目采购公告",
+   "url": "https://zb.ccnu.edu.cn/viewer.do?id=4073861&ver=2",
+   "normalizedUrl": "https://zb.ccnu.edu.cn/viewer.do?id=4073861&ver=2",
+   "source": "ccnu-zb",
+   "region": "湖北武汉",
+   "industry": "房建",
+   "noticeType": "招标公告",
+   "tenderer": "华中师范大学",
+   "publishTime": "2026-11-13",
+   "summary": "【招标公告】（新）【快速采购】【HSCFC14-20260707】协同创新中心空间改造项目采购公告 · 地区：湖北武汉 · 来源：ccnu-zb · 正文要点待补，以原文为准"
+  },
+  {
+   "id": "94a53e9c92bd53aa",
+>>>>>>> Stashed changes
    "title": "中南财经政法大学南湖校区幼儿园改扩建工程项目工程总承包(HBSJ-202611FJ-225001001)招标公告",
    "url": "https://www.hbbidcloud.cn/shengbenji/jyxx/004002/004002001/20261112/31487c9d-6b8d-4abb-9d71-5639e18fa946.html",
    "normalizedUrl": "https://www.hbbidcloud.cn/shengbenji/jyxx/004002/004002001/20261112/31487c9d-6b8d-4abb-9d71-5639e18fa946.html",
    "source": "hbbidcloud",
    "region": "湖北",
+<<<<<<< Updated upstream
+=======
    "industry": "房建",
    "noticeType": "招标公告",
    "tenderer": "—",
@@ -18,6 +43,73 @@
    "summary": "【招标公告】中南财经政法大学南湖校区幼儿园改扩建工程项目工程总承包(HBSJ-202611FJ-225001001)招标公告 · 地区：湖北 · 来源：hbbidcloud · 正文要点待补，以原文为准"
   },
   {
+   "id": "2b9c1df428ce7446",
+   "title": "设施改造提升项目设施改造提升项目第1次答疑(标段编号HBSJ-202611FJ-224001001)",
+   "url": "https://www.hbbidcloud.cn/shengbenji/jyxx/004003/004003001/20261112/95569c54-4a69-4dd2-b8f7-557afc4d4550.html",
+   "normalizedUrl": "https://www.hbbidcloud.cn/shengbenji/jyxx/004003/004003001/20261112/95569c54-4a69-4dd2-b8f7-557afc4d4550.html",
+   "source": "hbbidcloud",
+   "region": "湖北",
+   "industry": "房建",
+   "noticeType": "答疑公告",
+   "tenderer": "—",
+   "publishTime": "2026-11-12",
+   "summary": "【答疑公告】设施改造提升项目设施改造提升项目第1次答疑(标段编号HBSJ-202611FJ-224001001) · 地区：湖北 · 来源：hbbidcloud · 正文要点待补，以原文为准"
+  },
+  {
+   "id": "be57274b6bb0285b",
+   "title": "青菱都市工业园十村一场统征储备产业用地开发工程6(D-17地块)设计施工总承包（评定分离）",
+   "url": "https://www.whzbtbxt.cn/whebd/#/cmsIndex?path=tendererNotice&id=202611121743594099&registrationId=202611061142454177&type=details",
+   "normalizedUrl": "https://www.whzbtbxt.cn/whebd#/cmsIndex?path=tendererNotice&id=202611121743594099&registrationId=202611061142454177&type=details",
+   "source": "whzbtb",
+   "region": "湖北武汉",
+   "industry": "房建",
+   "noticeType": "招标公告",
+   "tenderer": "武汉杨泗矶经贸发展有限公司",
+   "publishTime": "2026-11-12",
+   "summary": "招标单位：武汉杨泗矶经贸发展有限公司；投标截止：2026-11-17 19:00"
+  },
+  {
+   "id": "9b9ba4d5beb92bcc",
+   "title": "新建居住、防护绿地青山滨江项目（D-1、E-1地块）工程总承包（EPC）",
+   "url": "https://www.whzbtbxt.cn/whebd/#/cmsIndex?path=tendererNotice&id=202611121411501788&registrationId=202611111131413892&type=details",
+   "normalizedUrl": "https://www.whzbtbxt.cn/whebd#/cmsIndex?path=tendererNotice&id=202611121411501788&registrationId=202611111131413892&type=details",
+   "source": "whzbtb",
+   "region": "湖北武汉",
+   "industry": "房建",
+   "noticeType": "招标公告",
+   "tenderer": "武汉城发更新集团有限公司",
+   "publishTime": "2026-11-12",
+   "summary": "招标单位：武汉城发更新集团有限公司；投标截止：2026-11-17 18:00"
+  },
+  {
+   "id": "4224f5056059df8d",
+   "title": "荆州市第一人民医院荆州市第一人民医院病房改造提升工程项目信息化专项硬件采购公开招标公告",
+   "url": "http://www.jzggzy.com/jyxx/012002/012002001/20261112/3610b863a10143b58206c7529f3ccb17.html",
+   "normalizedUrl": "http://www.jzggzy.com/jyxx/012002/012002001/20261112/3610b863a10143b58206c7529f3ccb17.html",
+   "source": "jingzhou-ggzy",
+   "region": "湖北荆州",
+   "industry": "房建",
+   "noticeType": "招标公告",
+   "tenderer": "—",
+   "publishTime": "2026-11-12",
+   "summary": "【招标公告】荆州市第一人民医院荆州市第一人民医院病房改造提升工程项目信息化专项硬件采购公开招标公告 · 地区：湖北荆州 · 来源：jingzhou-ggzy · 正文要点待补，以原文为准"
+  },
+  {
+   "id": "3cc2b56003d238cf",
+   "title": "【荆门市本级中心】屈家岭科技成果转化中心（一期）EPC总承包(HBJM-202611FJ-026001001)招标公告",
+   "url": "https://www.hbbidcloud.cn/jingmen/jyxx/004002/004002001/20261111/0c8dbe81-fe76-4ba6-b9ef-91802fcaf361.html",
+   "normalizedUrl": "https://www.hbbidcloud.cn/jingmen/jyxx/004002/004002001/20261111/0c8dbe81-fe76-4ba6-b9ef-91802fcaf361.html",
+   "source": "jingmen-ggzy",
+   "region": "湖北荆门",
+>>>>>>> Stashed changes
+   "industry": "房建",
+   "noticeType": "招标公告",
+   "tenderer": "—",
+   "publishTime": "2026-11-12",
+   "summary": "【招标公告】中南财经政法大学南湖校区幼儿园改扩建工程项目工程总承包(HBSJ-202611FJ-225001001)招标公告 · 地区：湖北 · 来源：hbbidcloud · 正文要点待补，以原文为准"
+  },
+  {
+<<<<<<< Updated upstream
    "id": "746254e2e00319b6",
    "title": "设施改造提升项目设施改造提升项目第1次答疑(标段编号HBSJ-202611FJ-224001001)",
    "url": "https://www.hbbidcloud.cn/shengbenji/jyxx/004003/004003001/20261112/95569c54-4a69-4dd2-b8f7-557afc4d4550.html",
@@ -32,6 +124,9 @@
   },
   {
    "id": "16563fc6868aedf1",
+=======
+   "id": "07bc62e346932d97",
+>>>>>>> Stashed changes
    "title": "湖北省人民医院老旧病区适应性改造项目工程总承包（2）项目医用气体暂估价项目(HBSJ-202410FJ-226005001)招标公告",
    "url": "https://www.hbbidcloud.cn/shengbenji/jyxx/004002/004002001/20261111/c5547be8-3420-4d94-af97-abd17582197e.html",
    "normalizedUrl": "https://www.hbbidcloud.cn/shengbenji/jyxx/004002/004002001/20261111/c5547be8-3420-4d94-af97-abd17582197e.html",
@@ -83,7 +178,7 @@
    "summary": "【招标公告】马房山及南湖校区日常绿化修缮改造分散采购公告 · 地区：湖北武汉 · 来源：whut-cgyztb · 正文要点待补，以原文为准"
   },
   {
-   "id": "2b5849a5667f48f8",
+   "id": "343a7c6eb98b800f",
    "title": "张家湾汽车科技园二期三期13#停车楼工程总承包 （EPC）",
    "url": "https://www.whzbtbxt.cn/whebd/#/cmsIndex?path=tendererNotice&id=202611111601395485&registrationId=202611111307082784&type=details",
    "normalizedUrl": "https://www.whzbtbxt.cn/whebd#/cmsIndex?path=tendererNotice&id=202611111601395485&registrationId=202611111307082784&type=details",
@@ -96,6 +191,7 @@
    "summary": "招标单位：湖北光霞投资集团有限公司；投标截止：2026-11-16 18:00"
   },
   {
+<<<<<<< Updated upstream
    "id": "d80727f28a457e59",
    "title": "长江国际绿创中心项目B地块3号楼EPC工程总承包(HBSJ-202108FJ-169016001)招标公告",
    "url": "https://www.hbbidcloud.cn/shengbenji/jyxx/004002/004002001/20261110/31eacffa-6118-41a4-871f-b3542ceef06a.html",
@@ -250,6 +346,32 @@
    "tenderer": "武汉安家保障性住房有限公司",
    "publishTime": "2026-11-10",
    "summary": "招标单位：武汉安家保障性住房有限公司；投标截止：2026-11-15 18:00"
+=======
+   "id": "e0c297a07b99a599",
+   "title": "【荆门市本级中心】中国农谷智慧冷链农产品展示交易区装饰装修工程项目工程总承包(EPC)中国农谷智慧冷链农产品展示交易区装饰装修工程项目工程总承包(EPC)第1次资审答疑(标段编号HBJM-202610FJ-024001001)",
+   "url": "https://www.hbbidcloud.cn/jingmen/jyxx/004003/004003001/20261111/353806ce-2233-46bb-b600-85c741a176d9.html",
+   "normalizedUrl": "https://www.hbbidcloud.cn/jingmen/jyxx/004003/004003001/20261111/353806ce-2233-46bb-b600-85c741a176d9.html",
+   "source": "jingmen-ggzy",
+   "region": "湖北荆门",
+   "industry": "房建",
+   "noticeType": "答疑公告",
+   "tenderer": "—",
+   "publishTime": "2026-11-11",
+   "summary": "【答疑公告】【荆门市本级中心】中国农谷智慧冷链农产品展示交易区装饰装修工程项目工程总承包(EPC)中国农谷智慧冷链农产品展示交易区装饰装修工程项目工程总承包(EPC)第1次资审答疑(标段编号HBJM-202610FJ-024001001) · 地区：湖北荆门 · 来源：jingm"
+  },
+  {
+   "id": "c940569bcafac629",
+   "title": "马房山及南湖校区日常绿化修缮改造分散采购公告",
+   "url": "http://cgyztb.whut.edu.cn/cgfscg/5345.chtml",
+   "normalizedUrl": "http://cgyztb.whut.edu.cn/cgfscg/5345.chtml",
+   "source": "whut-cgyztb",
+   "region": "湖北武汉",
+   "industry": "房建",
+   "noticeType": "招标公告",
+   "tenderer": "武汉理工大学",
+   "publishTime": "2026-11-11",
+   "summary": "【招标公告】马房山及南湖校区日常绿化修缮改造分散采购公告 · 地区：湖北武汉 · 来源：whut-cgyztb · 正文要点待补，以原文为准"
+>>>>>>> Stashed changes
   }
  ]
 }
