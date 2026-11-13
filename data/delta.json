@@ -1,11 +1,89 @@
 {
- "generatedAt": "2026-11-13 14:34",
+ "generatedAt": "2026-11-13 23:21",
  "since": "2026-11-11",
  "keywords": [],
- "count": 11,
+ "count": 17,
  "items": [
   {
-   "id": "00cacc6707f45c73",
+   "id": "52eee58b734e838f",
+   "title": "【十堰市中心】西城开发区天龙路5号厂区维修改造项目西城开发区天龙路5号厂区维修改造项目（EPC）(HBSY-202611FJ-039001001)招标公告",
+   "url": "https://www.hbbidcloud.cn/shiyan/jyxx/004002/004002001/20261113/7aed76c2-b09e-4def-86d3-13ce531587fa.html",
+   "normalizedUrl": "https://www.hbbidcloud.cn/shiyan/jyxx/004002/004002001/20261113/7aed76c2-b09e-4def-86d3-13ce531587fa.html",
+   "source": "shiyan-ggzy",
+   "region": "湖北十堰",
+   "industry": "房建",
+   "noticeType": "招标公告",
+   "tenderer": "十堰瑞景生态建设发展有限公司",
+   "publishTime": "2026-11-13",
+   "summary": "招标单位：十堰瑞景生态建设发展有限公司；招标范围：本项目采用工程总承包（EPC）方式实施建设，总承包范围包括本项目的设计、采购、施工直至所有承包范围内容竣工验收合格、取得项目竣工验收备案证及整体移交、质保期维保，以及发包人要求的其…；建设规模：对西城开发区天龙路5号厂区内建筑物进"
+  },
+  {
+   "id": "2ccd87499de73300",
+   "title": "【十堰市中心】十堰市茅箭区新能源汽车关键部件生产基地项目二标段：工艺及房建工程全过程监理服务(HBSY-202608FJ-023003001)招标公告",
+   "url": "https://www.hbbidcloud.cn/shiyan/jyxx/004002/004002001/20261113/7ced29e2-b2ce-4285-a10e-f363344dc3c5.html",
+   "normalizedUrl": "https://www.hbbidcloud.cn/shiyan/jyxx/004002/004002001/20261113/7ced29e2-b2ce-4285-a10e-f363344dc3c5.html",
+   "source": "shiyan-ggzy",
+   "region": "湖北十堰",
+   "industry": "房建",
+   "noticeType": "招标公告",
+   "tenderer": "湖北高科汽车科技有限公司",
+   "publishTime": "2026-11-13",
+   "summary": "招标单位：湖北高科汽车科技有限公司；招标范围：本标段施工图纸所含全部内容的施工准备阶段、施工阶段、竣工验收及缺陷责任期全过程监理 标段划分：一个标段 计划监理与相关服务期/监理服务期: 1090日历天，其中其中计划监理服务期3…"
+  },
+  {
+   "id": "1bfb1968fad79b21",
+   "title": "【十堰市中心】十堰生产服务型国家物流枢纽铁路专用线项目十堰生产服务型国家物流枢纽铁路专用线项目配套项目工程总承包（EPC）第1次资审答疑(标段编号HBSY-202609FJ-030002001)",
+   "url": "https://www.hbbidcloud.cn/shiyan/jyxx/004003/004003001/20261113/e905ab13-8468-48c7-92ea-6cc3fe77dbfd.html",
+   "normalizedUrl": "https://www.hbbidcloud.cn/shiyan/jyxx/004003/004003001/20261113/e905ab13-8468-48c7-92ea-6cc3fe77dbfd.html",
+   "source": "shiyan-ggzy",
+   "region": "湖北十堰",
+   "industry": "房建",
+   "noticeType": "答疑公告",
+   "tenderer": "—",
+   "publishTime": "2026-11-13",
+   "summary": "【答疑公告】【十堰市中心】十堰生产服务型国家物流枢纽铁路专用线项目十堰生产服务型国家物流枢纽铁路专用线项目配套项目工程总承包（EPC）第1次资审答疑(标段编号HBSY-202609FJ-030002001) · 地区：湖北十堰 · 来源：shiyan-ggzy · 正文要点待补，"
+  },
+  {
+   "id": "e74d476d757f2678",
+   "title": "【黄冈市中心】黄冈市医疗集团营养膳食服务中心建设项目工程总承包黄冈市医疗集团营养膳食服务中心建设项目工程总承包第1次答疑(标段编号HBHG-202610FJ-012001001)",
+   "url": "https://www.hbbidcloud.cn/huanggang/jyxx/004003/004003001/20261113/71f1fdf6-9f53-4277-ab25-2e5db5d4580e.html",
+   "normalizedUrl": "https://www.hbbidcloud.cn/huanggang/jyxx/004003/004003001/20261113/71f1fdf6-9f53-4277-ab25-2e5db5d4580e.html",
+   "source": "huanggang-ggzy",
+   "region": "湖北黄冈",
+   "industry": "房建",
+   "noticeType": "答疑公告",
+   "tenderer": "黄冈市中心医院",
+   "publishTime": "2026-11-13",
+   "summary": "招标单位：黄冈市中心医院；代理机构：国信国际工程咨询集团股份有限公司"
+  },
+  {
+   "id": "f71fd9d58df13eda",
+   "title": "【随州市本级中心】随州市白桃片区安置房建设项目供电工程(HBSU-202411FJ-011004001)招标公告",
+   "url": "https://www.hbbidcloud.cn/suizhou/jyxx/004002/004002001/20261113/b3a4424c-310b-4b6a-bd10-d3255b67a3ff.html",
+   "normalizedUrl": "https://www.hbbidcloud.cn/suizhou/jyxx/004002/004002001/20261113/b3a4424c-310b-4b6a-bd10-d3255b67a3ff.html",
+   "source": "suizhou-ggzy",
+   "region": "湖北随州",
+   "industry": "房建",
+   "noticeType": "招标公告",
+   "tenderer": "武汉博宏建设集团有限公司",
+   "publishTime": "2026-11-13",
+   "summary": "招标单位：武汉博宏建设集团有限公司；招标范围：本次拟招标本项目红线外电缆井接驳点至红线内所有供电项目，包括图纸设计范围内的变压器、箱式变压器、高压环网柜、高压配电柜、低压配电柜、电线电缆等电气设备采购及安装工程；建设规模：项目规划总用地面积5.11h㎡，有效用地面积4.58h㎡；"
+  },
+  {
+   "id": "8e8f5ef7cabfd142",
+   "title": "【天门市中心】天门市慢病防治中心建设项目天门市慢病防治中心建设项目设计服务第2次答疑(标段编号HBTM-202610FJ-009001001)",
+   "url": "https://www.hbbidcloud.cn/tianmen/jyxx/004003/004003001/20261113/b08f3096-67b4-475b-9b34-65f87cd3b425.html",
+   "normalizedUrl": "https://www.hbbidcloud.cn/tianmen/jyxx/004003/004003001/20261113/b08f3096-67b4-475b-9b34-65f87cd3b425.html",
+   "source": "tianmen-ggzy",
+   "region": "湖北天门",
+   "industry": "房建",
+   "noticeType": "答疑公告",
+   "tenderer": "—",
+   "publishTime": "2026-11-13",
+   "summary": "为避免影响投标文件编制，本项目开标时间（ 投标文件递交截止时间 ）延期至 “2026年12月01日9时00分”"
+  },
+  {
+   "id": "aab506a4c6757e1f",
    "title": "【HSCFC14-20260707】协同创新中心空间改造项目采购公告",
    "url": "https://zb.ccnu.edu.cn/viewer.do?id=4073861&ver=2",
    "normalizedUrl": "https://zb.ccnu.edu.cn/viewer.do?id=4073861&ver=2",
@@ -18,7 +96,7 @@
    "summary": "【招标公告】（新）【快速采购】【HSCFC14-20260707】协同创新中心空间改造项目采购公告 · 地区：湖北武汉 · 来源：ccnu-zb · 正文要点待补，以原文为准"
   },
   {
-   "id": "dee92de49827e26b",
+   "id": "0af87eb971af78c3",
    "title": "中南财经政法大学南湖校区幼儿园改扩建工程项目工程总承包(HBSJ-202611FJ-225001001)招标公告",
    "url": "https://www.hbbidcloud.cn/shengbenji/jyxx/004002/004002001/20261112/31487c9d-6b8d-4abb-9d71-5639e18fa946.html",
    "normalizedUrl": "https://www.hbbidcloud.cn/shengbenji/jyxx/004002/004002001/20261112/31487c9d-6b8d-4abb-9d71-5639e18fa946.html",
@@ -31,7 +109,7 @@
    "summary": "【招标公告】中南财经政法大学南湖校区幼儿园改扩建工程项目工程总承包(HBSJ-202611FJ-225001001)招标公告 · 地区：湖北 · 来源：hbbidcloud · 正文要点待补，以原文为准"
   },
   {
-   "id": "7f38dca1c5f3478c",
+   "id": "e83997e21a60187e",
    "title": "设施改造提升项目设施改造提升项目第1次答疑(标段编号HBSJ-202611FJ-224001001)",
    "url": "https://www.hbbidcloud.cn/shengbenji/jyxx/004003/004003001/20261112/95569c54-4a69-4dd2-b8f7-557afc4d4550.html",
    "normalizedUrl": "https://www.hbbidcloud.cn/shengbenji/jyxx/004003/004003001/20261112/95569c54-4a69-4dd2-b8f7-557afc4d4550.html",
@@ -83,7 +161,7 @@
    "summary": "【招标公告】荆州市第一人民医院荆州市第一人民医院病房改造提升工程项目信息化专项硬件采购公开招标公告 · 地区：湖北荆州 · 来源：jingzhou-ggzy · 正文要点待补，以原文为准"
   },
   {
-   "id": "de486d778f2882a4",
+   "id": "2697d1c3adc15e11",
    "title": "湖北省人民医院老旧病区适应性改造项目工程总承包（2）项目医用气体暂估价项目(HBSJ-202410FJ-226005001)招标公告",
    "url": "https://www.hbbidcloud.cn/shengbenji/jyxx/004002/004002001/20261111/c5547be8-3420-4d94-af97-abd17582197e.html",
    "normalizedUrl": "https://www.hbbidcloud.cn/shengbenji/jyxx/004002/004002001/20261111/c5547be8-3420-4d94-af97-abd17582197e.html",
@@ -96,7 +174,7 @@
    "summary": "【招标公告】湖北省人民医院老旧病区适应性改造项目工程总承包（2）项目医用气体暂估价项目(HBSJ-202410FJ-226005001)招标公告 · 地区：湖北 · 来源：hbbidcloud · 正文要点待补，以原文为准"
   },
   {
-   "id": "64c3fdd67f79c2c5",
+   "id": "b58baa76e06fe947",
    "title": "【荆门市本级中心】中国农谷智慧冷链农产品展示交易区装饰装修工程项目工程总承包(EPC)中国农谷智慧冷链农产品展示交易区装饰装修工程项目工程总承包(EPC)第1次资审答疑(标段编号HBJM-202610FJ-024001001)",
    "url": "https://www.hbbidcloud.cn/jingmen/jyxx/004003/004003001/20261111/353806ce-2233-46bb-b600-85c741a176d9.html",
    "normalizedUrl": "https://www.hbbidcloud.cn/jingmen/jyxx/004003/004003001/20261111/353806ce-2233-46bb-b600-85c741a176d9.html",
@@ -109,7 +187,7 @@
    "summary": "【答疑公告】【荆门市本级中心】中国农谷智慧冷链农产品展示交易区装饰装修工程项目工程总承包(EPC)中国农谷智慧冷链农产品展示交易区装饰装修工程项目工程总承包(EPC)第1次资审答疑(标段编号HBJM-202610FJ-024001001) · 地区：湖北荆门 · 来源：jingm"
   },
   {
-   "id": "0f90f530ae72f5e9",
+   "id": "3b6f6476cf8637cd",
    "title": "【荆门市本级中心】屈家岭科技成果转化中心（一期）EPC总承包(HBJM-202611FJ-026001001)招标公告",
    "url": "https://www.hbbidcloud.cn/jingmen/jyxx/004002/004002001/20261111/0c8dbe81-fe76-4ba6-b9ef-91802fcaf361.html",
    "normalizedUrl": "https://www.hbbidcloud.cn/jingmen/jyxx/004002/004002001/20261111/0c8dbe81-fe76-4ba6-b9ef-91802fcaf361.html",
@@ -122,7 +200,7 @@
    "summary": "【招标公告】【荆门市本级中心】屈家岭科技成果转化中心（一期）EPC总承包(HBJM-202611FJ-026001001)招标公告 · 地区：湖北荆门 · 来源：jingmen-ggzy · 正文要点待补，以原文为准"
   },
   {
-   "id": "02660d4777a057a4",
+   "id": "e259b838b4fe3dfa",
    "title": "马房山及南湖校区日常绿化修缮改造分散采购公告",
    "url": "http://cgyztb.whut.edu.cn/cgfscg/5345.chtml",
    "normalizedUrl": "http://cgyztb.whut.edu.cn/cgfscg/5345.chtml",
