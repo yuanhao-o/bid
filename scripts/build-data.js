@@ -286,6 +286,8 @@ async function cloudRows() {
         summary: scrubSummary(d.summary),
         region: d.region || '',
         industry: d.industry || '',
+        workType: '',
+        workTypeBy: '',
         noticeType: d.noticeType || '',
         status: d.status || '有效',
         normalizedUrl: d.normalizedUrl || d.url,
@@ -297,6 +299,11 @@ async function cloudRows() {
          还是旧的「一律招标公告」，重算一遍才能把「合同信息公示」这类错的标签纠正过来 */
       doc.noticeType = classify.typeOf(doc);
       doc.industry = classify.industryOf(doc);
+      /* 业务类型只服务网页筛选与标签：delta.json 和云端库都不带这两个字段，
+         推送口径（类型白名单 × 房建）保持在 classify.isPushCandidate，不受影响 */
+      const wt = classify.workTypeOf(doc);
+      doc.workType = wt.label;
+      doc.workTypeBy = wt.by;
       return doc;
     })
     .sort((a, b) => String(b.publishTime).localeCompare(String(a.publishTime)));
