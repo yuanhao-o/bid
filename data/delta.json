@@ -1,9 +1,35 @@
 {
- "generatedAt": "2026-11-16 14:19",
- "since": "2026-11-14",
+ "generatedAt": "2026-11-17 00:59",
+ "since": "2026-11-15",
  "keywords": [],
- "count": 4,
+ "count": 5,
  "items": [
+  {
+   "id": "596b5c2fadbb0513",
+   "title": "【潜江市中心】潜江市湖滨超市建设项目(HBQJ-202610FJ-037001001)招标公告",
+   "url": "https://www.hbbidcloud.cn/qianjiang/jyxx/004002/004002001/20261116/2d946e08-8d3c-4fb5-a7c7-32b5a769d5ab.html",
+   "normalizedUrl": "https://www.hbbidcloud.cn/qianjiang/jyxx/004002/004002001/20261116/2d946e08-8d3c-4fb5-a7c7-32b5a769d5ab.html",
+   "source": "qianjiang-ggzy",
+   "region": "湖北潜江",
+   "industry": "房建",
+   "noticeType": "招标公告",
+   "tenderer": "潜江市水乡园林投资有限公司",
+   "publishTime": "2026-11-16",
+   "summary": "招标单位：潜江市水乡园林投资有限公司；招标范围：图纸和工程量清单所包含的全部内容 标段划分：本项目不分标段 计划工期：360日历天，计划开工日期2026-12-20 合同估算价：2448.61万元 2.3其他：/ 3.投标人资格…；建设规模：新建7482.47㎡仓储式超市，含配电"
+  },
+  {
+   "id": "220df484fdcec2d3",
+   "title": "【潜江市中心】城发沁园商业及住宅配套工程施工总承包城发沁园商业及住宅配套工程施工总承包(第二次)第1次资审答疑(标段编号HBQJ-202608FJ-029001002)",
+   "url": "https://www.hbbidcloud.cn/qianjiang/jyxx/004003/004003001/20261116/eef7780e-cb53-4068-b834-3b93fdd8ed8e.html",
+   "normalizedUrl": "https://www.hbbidcloud.cn/qianjiang/jyxx/004003/004003001/20261116/eef7780e-cb53-4068-b834-3b93fdd8ed8e.html",
+   "source": "qianjiang-ggzy",
+   "region": "湖北潜江",
+   "industry": "房建",
+   "noticeType": "答疑公告",
+   "tenderer": "潜江市城发建设投资有限公司",
+   "publishTime": "2026-11-16",
+   "summary": ""
+  },
   {
    "id": "6bbcf778e0a64976",
    "title": "【HSBFC14-20260763】物理学院超算中心UPS线路增容改造采购公告",
@@ -31,7 +57,7 @@
    "summary": "招标单位：武汉市桥梁工程有限公司；投标截止：2026-12-15 09:59 | 评标办法：（适用于评定；评标办法：（适用于评定分离）武汉市建设工程工程总承包招标文件示范文本（综合评估法）"
   },
   {
-   "id": "70c95c1f5c6ca4d9",
+   "id": "d696fc6c854326ec",
    "title": "【十堰市中心】十堰市特殊教育学校迁建项目（二期）十堰市特殊教育学校迁建项目（二期）第1次答疑(标段编号HBSY-202510FJ-040002001)",
    "url": "https://www.hbbidcloud.cn/shiyan/jyxx/004003/004003001/20261115/e34a1dfb-b7a3-4d0e-88b8-387f68a2e2f4.html",
    "normalizedUrl": "https://www.hbbidcloud.cn/shiyan/jyxx/004003/004003001/20261115/e34a1dfb-b7a3-4d0e-88b8-387f68a2e2f4.html",
@@ -42,19 +68,6 @@
    "tenderer": "—",
    "publishTime": "2026-11-15",
    "summary": "（ 2）本项目的招标控制价金额详见第二章投标人须知前附表2.1.2（2）"
-  },
-  {
-   "id": "8797cec8c22045a7",
-   "title": "2026年度江夏区高标准农田新建和改造提升建设项目（金水片区）（二次）",
-   "url": "https://www.whzbtbxt.cn/whebd/#/cmsIndex?path=tendererNotice&id=202611140928368334&registrationId=202611132324140131&type=details",
-   "normalizedUrl": "https://www.whzbtbxt.cn/whebd#/cmsIndex?path=tendererNotice&id=202611140928368334&registrationId=202611132324140131&type=details",
-   "source": "whzbtb",
-   "region": "湖北武汉",
-   "industry": "房建",
-   "noticeType": "招标公告",
-   "tenderer": "—",
-   "publishTime": "2026-11-14",
-   "summary": "投标截止：2026-12-07 09:29 | 评标办法：武汉市高标准；评标办法：武汉市高标准农田建设工程施工招标文件示范文本(综合评估法)"
   }
  ]
 }
