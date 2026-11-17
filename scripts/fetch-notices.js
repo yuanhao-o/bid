@@ -455,7 +455,7 @@ async function fetchSites() {
 const RONGHW_PAGES = Math.max(1, parseInt(process.env.RONGHW_PAGES, 10) || 3);
 const RONGHW_API = 'https://cgv3.ronghw.cn/api/truelore-business-support/noauth/trans/trade/pageEs';
 const RONGHW_DETAIL = 'https://www.ronghw.cn/web-portal/index.html#/trade-info-detail?id=';
-const RONGHW_TYPES = { 1: '招标公告', 2: '资格预审公告', 3: '变更公告', 4: '中标候选公示', 5: '中标公告', 6: '终止公告' };
+const RONGHW_TYPES = { 1: '招标公告', 2: '变更公告', 3: '中标候选公示', 4: '中标公告', 5: '流标公告', 6: '终止公告' };
 
 /* 13 位毫秒 / 10 位秒统一转北京时间；其它原样截到分钟 */
 function stampTime(v) {
