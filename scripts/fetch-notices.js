@@ -446,6 +446,72 @@ async function fetchSites() {
   return out;
 }
 
+/* ---------------- 中国融通电子商务平台（JSON 接口） ----------------
+ * 列表 POST /api/truelore-business-support/noauth/trans/trade/pageEs，匿名可读、不需要 Referer；
+ * 30 条/页，totalCount 上限 10000。releaseTime 是 13 位毫秒时间戳。
+ * 详情是前端哈希路由（#/trade-info-detail?id=…），静态请求拿不到正文，所以不排进补详情名单。
+ * robots.txt 404（无禁止规则）。
+ */
+const RONGHW_PAGES = Math.max(1, parseInt(process.env.RONGHW_PAGES, 10) || 3);
+const RONGHW_API = 'https://cgv3.ronghw.cn/api/truelore-business-support/noauth/trans/trade/pageEs';
+const RONGHW_DETAIL = 'https://www.ronghw.cn/web-portal/index.html#/trade-info-detail?id=';
+const RONGHW_TYPES = { 1: '招标公告', 2: '资格预审公告', 3: '变更公告', 4: '中标候选公示', 5: '中标公告', 6: '终止公告' };
+
+/* 13 位毫秒 / 10 位秒统一转北京时间；其它原样截到分钟 */
+function stampTime(v) {
+  const s = String(v === undefined || v === null ? '' : v).trim();
+  if (/^\d{13}$/.test(s)) return new Date(Number(s) + 8 * 3600000).toISOString().replace('T', ' ').slice(0, 16);
+  if (/^\d{10}$/.test(s)) return new Date(Number(s) * 1000 + 8 * 3600000).toISOString().replace('T', ' ').slice(0, 16);
+  return s.replace('T', ' ').slice(0, 16);
+}
+
+async function rhPost(body, ms = 30000) {
+  const ctl = new AbortController();
+  const timer = setTimeout(() => ctl.abort(), ms);
+  try {
+    const r = await fetch(RONGHW_API, {
+      method: 'POST', signal: ctl.signal,
+      headers: { 'User-Agent': UA, 'Content-Type': 'application/json;charset=UTF-8', 'Accept': 'application/json, text/plain, */*' },
+      body: JSON.stringify(body)
+    });
+    return { ok: r.ok, status: r.status, text: await r.text() };
+  } catch (e) {
+    return { ok: false, status: 0, text: '', error: String(e.message || e) };
+  } finally { clearTimeout(timer); }
+}
+
+async function fetchRonghw() {
+  const out = [];
+  for (let p = 1; p <= RONGHW_PAGES; p++) {
+    const r = await rhPost({ pageNum: p, pageSize: 30, tradePattern: '', rtNoticeTypes: [1, 2, 3, 4, 5, 6] });
+    if (!r.ok) { console.log('  融通 第' + p + '页失败 ' + r.status + ' ' + (r.error || '')); break; }
+    let j = null;
+    try { j = JSON.parse(r.text); } catch (e) { console.log('  融通 第' + p + '页返回非 JSON'); break; }
+    const list = (j && j.data && j.data.list) || [];
+    if (!list.length) break;
+    let k = 0;
+    list.forEach((row) => {
+      const title = String(row.businessName || '').replace(/\s+/g, ' ').trim();
+      const id = row.id;
+      const t = Number(row.noticeType) || 1;
+      if (!title || title.length < 6 || !id) return;
+      out.push(decorate({
+        title: title,
+        url: RONGHW_DETAIL + encodeURIComponent(String(id)) + '&publishStatus=1&noticeType=' + t,
+        publishTime: stampTime(row.releaseTime),
+        source: 'ronghw',
+        region: '全国',
+        noticeType: RONGHW_TYPES[t] || '',
+        tenderer: String(row.tendererName || '').trim()
+      }));
+      k++;
+    });
+    console.log('  融通 第' + p + '页 → ' + k + ' 条');
+    await sleep(300);
+  }
+  return out;
+}
+
 /* ---------------- 主流程 ---------------- */
 (async () => {
   const cutoff = ymd(new Date(Date.now() - WINDOW_DAYS * 86400000));
@@ -462,13 +528,14 @@ async function fetchSites() {
   const wh = await fetchWuhan(3);
   const city = await fetchCitySubsites();
   const sites = await fetchSites();
+  const rong = await fetchRonghw();
   console.log('来源合计：省本级 ' + hb.items.length + ' / 武汉 ' + wh.length +
-    ' / 地市 ' + city.length + ' / 高校与单位 ' + sites.length);
+    ' / 地市 ' + city.length + ' / 高校与单位 ' + sites.length + ' / 融通 ' + rong.length);
 
   // 合并：新抓的覆盖旧条目，但保留已有 snapshotText（避免重复抓正文）
   const map = new Map();
   prev.forEach((x) => { if (x && x.url) map.set(x.url, x); });
-  [...hb.items, ...wh, ...city, ...sites].forEach((x) => {
+  [...hb.items, ...wh, ...city, ...sites, ...rong].forEach((x) => {
     if (!x || !x.url || !x.title) return;
     const old = map.get(x.url) || {};
     map.set(x.url, Object.assign({}, old, x, {
