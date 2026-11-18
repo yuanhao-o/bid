@@ -1,11 +1,63 @@
 {
- "generatedAt": "2026-11-18 15:19",
+ "generatedAt": "2026-11-18 16:54",
  "since": "2026-11-16",
  "keywords": [],
- "count": 12,
+ "count": 17,
  "items": [
   {
-   "id": "b1f267d0d29b0bfe",
+   "id": "11e69d8fc904b459",
+   "title": "青山镇加油站项目工程总承包（EPC）-评定分离",
+   "url": "https://www.whzbtbxt.cn/whebd/#/cmsIndex?path=tendererNotice&id=202611181443311046&registrationId=202611180947530579&type=details",
+   "normalizedUrl": "https://www.whzbtbxt.cn/whebd#/cmsIndex?path=tendererNotice&id=202611181443311046&registrationId=202611180947530579&type=details",
+   "source": "whzbtb",
+   "region": "湖北武汉",
+   "industry": "房建",
+   "noticeType": "招标公告",
+   "tenderer": "武汉市青山古镇城市更新有限公司",
+   "publishTime": "2026-11-18",
+   "summary": "招标单位：武汉市青山古镇城市更新有限公司；投标截止：2026-11-23 19:01"
+  },
+  {
+   "id": "b4f2e4d5326709b3",
+   "title": "武汉市江岸区黄浦老旧厂区配套基础设施改造提升项目监理（评定分离）一标段",
+   "url": "https://www.whzbtbxt.cn/whebd/#/cmsIndex?path=tendererNotice&id=202611172021566333&registrationId=202611161608108668&type=details",
+   "normalizedUrl": "https://www.whzbtbxt.cn/whebd#/cmsIndex?path=tendererNotice&id=202611172021566333&registrationId=202611161608108668&type=details",
+   "source": "whzbtb",
+   "region": "湖北武汉",
+   "industry": "房建",
+   "noticeType": "招标公告",
+   "tenderer": "武汉市江岸区建设项目管理中心",
+   "publishTime": "2026-11-18",
+   "summary": "招标单位：武汉市江岸区建设项目管理中心；投标截止：2026-12-10 09:59 | 评标办法：（适用于评定；评标办法：（适用于评定分离）武汉市房屋建筑和市政工程监理与相关服务招标文件示范文本"
+  },
+  {
+   "id": "4b902ee2ffa72c8a",
+   "title": "武汉市江岸区黄浦老旧厂区配套基础设施改造提升项目监理（评定分离）二标段",
+   "url": "https://www.whzbtbxt.cn/whebd/#/cmsIndex?path=tendererNotice&id=202611172026466353&registrationId=202611161649311331&type=details",
+   "normalizedUrl": "https://www.whzbtbxt.cn/whebd#/cmsIndex?path=tendererNotice&id=202611172026466353&registrationId=202611161649311331&type=details",
+   "source": "whzbtb",
+   "region": "湖北武汉",
+   "industry": "房建",
+   "noticeType": "招标公告",
+   "tenderer": "武汉市江岸区建设项目管理中心",
+   "publishTime": "2026-11-18",
+   "summary": "招标单位：武汉市江岸区建设项目管理中心；投标截止：2026-12-10 09:59 | 评标办法：（适用于评定；评标办法：（适用于评定分离）武汉市房屋建筑和市政工程监理与相关服务招标文件示范文本"
+  },
+  {
+   "id": "9acc5f94eb5f38ac",
+   "title": "南湖校区幼儿园改扩建工程项目工程总承包第1次答疑(标段编号HBSJ-202611FJ-225001001)",
+   "url": "https://www.hbbidcloud.cn/shengbenji/jyxx/004003/004003001/20261117/8b326809-89b8-4811-976d-0f5eabc7fe12.html",
+   "normalizedUrl": "https://www.hbbidcloud.cn/shengbenji/jyxx/004003/004003001/20261117/8b326809-89b8-4811-976d-0f5eabc7fe12.html",
+   "source": "hbbidcloud",
+   "region": "湖北",
+   "industry": "房建",
+   "noticeType": "答疑公告",
+   "tenderer": "中南财经政法大学",
+   "publishTime": "2026-11-17",
+   "summary": "【答疑公告】南湖校区幼儿园改扩建工程项目工程总承包第1次答疑(标段编号HBSJ-202611FJ-225001001) · 地区：湖北 · 来源：hbbidcloud ·"
+  },
+  {
+   "id": "3af98f8caa6f9c27",
    "title": "2026年中国联通湖北武汉长江新区核心枢纽园区-光通信核心局楼与数据中心第1次答疑(标段编号HBSJ-202610FJ-216001001)",
    "url": "https://www.hbbidcloud.cn/shengbenji/jyxx/004003/004003001/20261117/4e4cad28-bca1-4047-b53a-27d9b9a4d9de.html",
    "normalizedUrl": "https://www.hbbidcloud.cn/shengbenji/jyxx/004003/004003001/20261117/4e4cad28-bca1-4047-b53a-27d9b9a4d9de.html",
@@ -18,7 +70,7 @@
    "summary": "【答疑公告】2026年中国联通湖北武汉长江新区核心枢纽园区-光通信核心局楼与数据中心第1次答疑(标段编号HBSJ-202610FJ-216001001) · 地区：湖北 · 来源：hbbidcloud · 正文要点待补，以原文为准"
   },
   {
-   "id": "3d7e83ec74cd0ea2",
+   "id": "27a91aa091c08a4d",
    "title": "A2-2-2F生产车间净化升级改造工程总承包（EPC）工程总承包（EPC）（第二次）工程总承包招标公告",
    "url": "https://www.hbbidcloud.cn/shengbenji/jyxx/004002/004002001/20261117/4bc370a4-369a-43b3-9d07-f90228c73ef1.html",
    "normalizedUrl": "https://www.hbbidcloud.cn/shengbenji/jyxx/004002/004002001/20261117/4bc370a4-369a-43b3-9d07-f90228c73ef1.html",
@@ -31,7 +83,7 @@
    "summary": "【招标公告】A2-2-2F生产车间净化升级改造工程总承包（EPC）工程总承包（EPC）（第二次）工程总承包招标公告 · 地区：湖北 · 来源：hbbidcloud · 正文要点待补，以原文为准"
   },
   {
-   "id": "9a11428f46e7ff77",
+   "id": "dbd310fab40a8620",
    "title": "湖北城市建设职业技术学院现代物流生产性实训基地厂房建设项目现代物流生产性实训基地厂房建设工程总承包（EPC）(HBSJ-202611FJ-229001001)招标公告",
    "url": "https://www.hbbidcloud.cn/shengbenji/jyxx/004002/004002001/20261117/369b0d7e-90cd-48f9-b1f5-319993c2d780.html",
    "normalizedUrl": "https://www.hbbidcloud.cn/shengbenji/jyxx/004002/004002001/20261117/369b0d7e-90cd-48f9-b1f5-319993c2d780.html",
@@ -44,7 +96,7 @@
    "summary": "【招标公告】湖北城市建设职业技术学院现代物流生产性实训基地厂房建设项目现代物流生产性实训基地厂房建设工程总承包（EPC）(HBSJ-202611FJ-229001001)招标公告 · 地区：湖北 · 来源：hbbidcloud · 正文要点待补，以原文为准"
   },
   {
-   "id": "0ec390bc9b707867",
+   "id": "c3246fc860ac4b70",
    "title": "华中区域人工影响天气中心能力建设工程EPC第1次答疑(标段编号HBSJ-202611FJ-223001001)",
    "url": "https://www.hbbidcloud.cn/shengbenji/jyxx/004003/004003001/20261117/62cad1d7-d0f9-4370-8e8e-193588abacde.html",
    "normalizedUrl": "https://www.hbbidcloud.cn/shengbenji/jyxx/004003/004003001/20261117/62cad1d7-d0f9-4370-8e8e-193588abacde.html",
@@ -57,7 +109,7 @@
    "summary": "【答疑公告】华中区域人工影响天气中心能力建设工程EPC第1次答疑(标段编号HBSJ-202611FJ-223001001) · 地区：湖北 · 来源：hbbidcloud · 正文要点待补，以原文为准"
   },
   {
-   "id": "61c769e0267f88a5",
+   "id": "59d07b54d09a2b48",
    "title": "湖北光谷实验室玻璃基板生产线升级改造项目工程总承包（EPC）第1次答疑(标段编号HBSJ-202609FJ-199001001)",
    "url": "https://www.hbbidcloud.cn/shengbenji/jyxx/004003/004003001/20261117/14b417eb-b53c-484c-bdd8-f313fdcb3d81.html",
    "normalizedUrl": "https://www.hbbidcloud.cn/shengbenji/jyxx/004003/004003001/20261117/14b417eb-b53c-484c-bdd8-f313fdcb3d81.html",
@@ -70,7 +122,7 @@
    "summary": "【答疑公告】湖北光谷实验室玻璃基板生产线升级改造项目工程总承包（EPC）第1次答疑(标段编号HBSJ-202609FJ-199001001) · 地区：湖北 · 来源：hbbidcloud · 正文要点待补，以原文为准"
   },
   {
-   "id": "7575193c4826dfcf",
+   "id": "44e700e146ddc2fb",
    "title": "融通地产（湖北）有限责任公司融通珞珈创新港（一期）改造工程三期施工总承包第2次答疑(标段编号HBSJ-202403FJ-067007001)",
    "url": "https://www.hbbidcloud.cn/shengbenji/jyxx/004003/004003001/20261117/b73a7ada-b3bf-4840-80d3-662fa6ae1670.html",
    "normalizedUrl": "https://www.hbbidcloud.cn/shengbenji/jyxx/004003/004003001/20261117/b73a7ada-b3bf-4840-80d3-662fa6ae1670.html",
@@ -83,7 +135,7 @@
    "summary": "【答疑公告】融通地产（湖北）有限责任公司融通珞珈创新港（一期）改造工程三期施工总承包第2次答疑(标段编号HBSJ-202403FJ-067007001) · 地区：湖北 · 来源：hbbidcloud · 正文要点待补，以原文为准"
   },
   {
-   "id": "51622789eba4f614",
+   "id": "321eddc6cb5972a4",
    "title": "森源公司食药用菌研产销一体化项目设备采购6标段(第二次)(HBSJ-202505FJ-106003011)招标公告",
    "url": "https://www.hbbidcloud.cn/shengbenji/jyxx/004002/004002001/20261117/06c3efe4-a7e0-475e-8559-1bcaf6339343.html",
    "normalizedUrl": "https://www.hbbidcloud.cn/shengbenji/jyxx/004002/004002001/20261117/06c3efe4-a7e0-475e-8559-1bcaf6339343.html",
@@ -96,46 +148,46 @@
    "summary": "【招标公告】森源公司食药用菌研产销一体化项目设备采购6标段(第二次)(HBSJ-202505FJ-106003011)招标公告 · 地区：湖北 · 来源：hbbidcloud · 正文要点待补，以原文为准"
   },
   {
-   "id": "a35fdcf76ebae5b3",
-   "title": "南湖校区幼儿园改扩建工程项目工程总承包第1次答疑(标段编号HBSJ-202611FJ-225001001)",
-   "url": "https://www.hbbidcloud.cn/shengbenji/jyxx/004003/004003001/20261117/8b326809-89b8-4811-976d-0f5eabc7fe12.html",
-   "normalizedUrl": "https://www.hbbidcloud.cn/shengbenji/jyxx/004003/004003001/20261117/8b326809-89b8-4811-976d-0f5eabc7fe12.html",
-   "source": "hbbidcloud",
-   "region": "湖北",
-   "industry": "房建",
-   "noticeType": "答疑公告",
-   "tenderer": "—",
-   "publishTime": "2026-11-17",
-   "summary": "【答疑公告】南湖校区幼儿园改扩建工程项目工程总承包第1次答疑(标段编号HBSJ-202611FJ-225001001) · 地区：湖北 · 来源：hbbidcloud · 正文要点待补，以原文为准"
-  },
-  {
-   "id": "8515469f61c2a35a",
-   "title": "【潜江市中心】潜江市湖滨超市建设项目(HBQJ-202610FJ-037001001)招标公告",
-   "url": "https://www.hbbidcloud.cn/qianjiang/jyxx/004002/004002001/20261116/2d946e08-8d3c-4fb5-a7c7-32b5a769d5ab.html",
-   "normalizedUrl": "https://www.hbbidcloud.cn/qianjiang/jyxx/004002/004002001/20261116/2d946e08-8d3c-4fb5-a7c7-32b5a769d5ab.html",
-   "source": "qianjiang-ggzy",
-   "region": "湖北潜江",
+   "id": "18832e141bbb29ec",
+   "title": "荆州市中心血站荆州市血液安全保障项目-基建基础设施改造(大型采血车)公开招标公告",
+   "url": "http://www.jzggzy.com/jyxx/012002/012002001/20261117/942678766da648edb633a038dead49eb.html",
+   "normalizedUrl": "http://www.jzggzy.com/jyxx/012002/012002001/20261117/942678766da648edb633a038dead49eb.html",
+   "source": "jingzhou-ggzy",
+   "region": "湖北荆州",
    "industry": "房建",
    "noticeType": "招标公告",
-   "tenderer": "潜江市水乡园林投资有限公司",
-   "publishTime": "2026-11-16",
-   "summary": "招标单位：潜江市水乡园林投资有限公司；招标范围：图纸和工程量清单所包含的全部内容 标段划分：本项目不分标段 计划工期：360日历天，计划开工日期2026-12-20 合同估算价：2448.61万元 2.3其他：/ 3.投标人资格…；建设规模：新建7482.47㎡仓储式超市，含配电"
+   "tenderer": "—",
+   "publishTime": "2026-11-17",
+   "summary": "【招标公告】荆州市中心血站荆州市血液安全保障项目-基建基础设施改造(大型采血车)公开招标公告 · 地区：湖北荆州 · 来源：jingzhou-ggzy · 正文要点待补，以原文为准"
   },
   {
-   "id": "5c23e0fc1352d2b0",
-   "title": "【潜江市中心】城发沁园商业及住宅配套工程施工总承包城发沁园商业及住宅配套工程施工总承包(第二次)第1次资审答疑(标段编号HBQJ-202608FJ-029001002)",
-   "url": "https://www.hbbidcloud.cn/qianjiang/jyxx/004003/004003001/20261116/eef7780e-cb53-4068-b834-3b93fdd8ed8e.html",
-   "normalizedUrl": "https://www.hbbidcloud.cn/qianjiang/jyxx/004003/004003001/20261116/eef7780e-cb53-4068-b834-3b93fdd8ed8e.html",
-   "source": "qianjiang-ggzy",
-   "region": "湖北潜江",
+   "id": "f413f582efcfd06f",
+   "title": "荆州市数据局2026年市数据共享交换平台和电子证照库运维项目公开招标公告",
+   "url": "http://www.jzggzy.com/jyxx/012002/012002001/20261117/8fcc50f1caf048baa88885219fa57d82.html",
+   "normalizedUrl": "http://www.jzggzy.com/jyxx/012002/012002001/20261117/8fcc50f1caf048baa88885219fa57d82.html",
+   "source": "jingzhou-ggzy",
+   "region": "湖北荆州",
    "industry": "房建",
-   "noticeType": "答疑公告",
-   "tenderer": "潜江市城发建设投资有限公司",
-   "publishTime": "2026-11-16",
-   "summary": ""
+   "noticeType": "招标公告",
+   "tenderer": "—",
+   "publishTime": "2026-11-17",
+   "summary": "【招标公告】荆州市数据局2026年市数据共享交换平台和电子证照库运维项目公开招标公告 · 地区：湖北荆州 · 来源：jingzhou-ggzy · 正文要点待补，以原文为准"
   },
   {
-   "id": "2ecc9bcda53d37d1",
+   "id": "67b1d959faa81c70",
+   "title": "江汉区智能制造产业园项目施工总承包（二次）暂估价工程-变配电及电力引入设计施工一体化项目（epc）",
+   "url": "https://www.whzbtbxt.cn/whebd/#/cmsIndex?path=tendererNotice&id=202611160945533777&registrationId=202611121642568294&type=details",
+   "normalizedUrl": "https://www.whzbtbxt.cn/whebd#/cmsIndex?path=tendererNotice&id=202611160945533777&registrationId=202611121642568294&type=details",
+   "source": "whzbtb",
+   "region": "湖北武汉",
+   "industry": "房建",
+   "noticeType": "招标公告",
+   "tenderer": "武汉市桥梁工程有限公司",
+   "publishTime": "2026-11-16",
+   "summary": "招标单位：武汉市桥梁工程有限公司；投标截止：2026-12-15 09:59 | 评标办法：（适用于评定；评标办法：（适用于评定分离）武汉市建设工程工程总承包招标文件示范文本（综合评估法）"
+  },
+  {
+   "id": "12b80961e7cdafd9",
    "title": "【HSBFC14-20260763】物理学院超算中心UPS线路增容改造采购公告",
    "url": "https://zb.ccnu.edu.cn/viewer.do?id=4073879&ver=2",
    "normalizedUrl": "https://zb.ccnu.edu.cn/viewer.do?id=4073879&ver=2",
@@ -148,17 +200,30 @@
    "summary": "【招标公告】（新）【快速采购】【HSBFC14-20260763】物理学院超算中心UPS线路增容改造采购公告 · 地区：湖北武汉 · 来源：ccnu-zb · 正文要点待补，以原文为准"
   },
   {
-   "id": "8764556d6f99b51b",
-   "title": "江汉区智能制造产业园项目施工总承包（二次）暂估价工程-变配电及电力引入设计施工一体化项目（epc）",
-   "url": "https://www.whzbtbxt.cn/whebd/#/cmsIndex?path=tendererNotice&id=202611160945533777&registrationId=202611121642568294&type=details",
-   "normalizedUrl": "https://www.whzbtbxt.cn/whebd#/cmsIndex?path=tendererNotice&id=202611160945533777&registrationId=202611121642568294&type=details",
-   "source": "whzbtb",
-   "region": "湖北武汉",
+   "id": "4dddcf24c83618c1",
+   "title": "【潜江市中心】潜江市湖滨超市建设项目(HBQJ-202610FJ-037001001)招标公告",
+   "url": "https://www.hbbidcloud.cn/qianjiang/jyxx/004002/004002001/20261116/2d946e08-8d3c-4fb5-a7c7-32b5a769d5ab.html",
+   "normalizedUrl": "https://www.hbbidcloud.cn/qianjiang/jyxx/004002/004002001/20261116/2d946e08-8d3c-4fb5-a7c7-32b5a769d5ab.html",
+   "source": "qianjiang-ggzy",
+   "region": "湖北潜江",
    "industry": "房建",
    "noticeType": "招标公告",
-   "tenderer": "武汉市桥梁工程有限公司",
+   "tenderer": "潜江市水乡园林投资有限公司",
    "publishTime": "2026-11-16",
-   "summary": "招标单位：武汉市桥梁工程有限公司；投标截止：2026-12-15 09:59 | 评标办法：（适用于评定；评标办法：（适用于评定分离）武汉市建设工程工程总承包招标文件示范文本（综合评估法）"
+   "summary": "招标单位：潜江市水乡园林投资有限公司；招标范围：图纸和工程量清单所包含的全部内容 标段划分：本项目不分标段 计划工期：360日历天，计划开工日期2026-12-20 合同估算价：2448.61万元 2.3其他：/ 3.投标人资格…；建设规模：新建7482.47㎡仓储式超市，含配电"
+  },
+  {
+   "id": "b6e01b3a0dfe204f",
+   "title": "【潜江市中心】城发沁园商业及住宅配套工程施工总承包城发沁园商业及住宅配套工程施工总承包(第二次)第1次资审答疑(标段编号HBQJ-202608FJ-029001002)",
+   "url": "https://www.hbbidcloud.cn/qianjiang/jyxx/004003/004003001/20261116/eef7780e-cb53-4068-b834-3b93fdd8ed8e.html",
+   "normalizedUrl": "https://www.hbbidcloud.cn/qianjiang/jyxx/004003/004003001/20261116/eef7780e-cb53-4068-b834-3b93fdd8ed8e.html",
+   "source": "qianjiang-ggzy",
+   "region": "湖北潜江",
+   "industry": "房建",
+   "noticeType": "答疑公告",
+   "tenderer": "潜江市城发建设投资有限公司",
+   "publishTime": "2026-11-16",
+   "summary": ""
   }
  ]
 }
