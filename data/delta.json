@@ -1,11 +1,11 @@
 {
- "generatedAt": "2026-11-25 16:24",
+ "generatedAt": "2026-11-25 16:30",
  "since": "2026-11-23",
  "keywords": [],
- "count": 14,
+ "count": 22,
  "items": [
   {
-   "id": "ef43c807d229f97b",
+   "id": "a5e9d38ba847c9e6",
    "title": "北京海政印刷厂北楼等工程施工总承包工程项目公开招标变更公告第1次变更公告",
    "url": "https://www.ronghw.cn/web-portal/index.html#/trade-info-detail?id=1575092403239464960&publishStatus=1&noticeType=2",
    "normalizedUrl": "https://www.ronghw.cn/web-portal/index.html#/trade-info-detail?id=1575092403239464960&publishStatus=1&noticeType=2",
@@ -18,7 +18,33 @@
    "summary": "【变更公告】北京海政印刷厂北楼等工程施工总承包工程项目公开招标变更公告第1次变更公告 · 地区：全国 · 来源：ronghw ·"
   },
   {
-   "id": "7fb8cda5d0443c79",
+   "id": "8a6e80f2e177c484",
+   "title": "武汉能源规划设计有限公司网谷能源总部2号楼改造升级项目工程总承包（评定分离）",
+   "url": "https://www.whzbtbxt.cn/whebd/#/cmsIndex?path=tendererNotice&id=202611230952115508&registrationId=202608271431235666&type=details",
+   "normalizedUrl": "https://www.whzbtbxt.cn/whebd#/cmsIndex?path=tendererNotice&id=202611230952115508&registrationId=202608271431235666&type=details",
+   "source": "whzbtb",
+   "region": "湖北武汉",
+   "industry": "房建",
+   "noticeType": "招标公告",
+   "tenderer": "武汉能源规划设计有限公司",
+   "publishTime": "2026-11-25",
+   "summary": "招标单位：武汉能源规划设计有限公司；投标截止：2026-11-30 17:00 | 评标办法：（适用于评定；评标办法：（适用于评定分离）武汉市建设工程工程总承包招标文件示范文本（综合评估法）"
+  },
+  {
+   "id": "ce14c300f65960db",
+   "title": "商服、住宅项目(阳逻水乡)1号楼(4-12层)室内装修改造工程EPC（评定分离）",
+   "url": "https://www.whzbtbxt.cn/whebd/#/cmsIndex?path=tendererNotice&id=202611241758140003&registrationId=202611241517502275&type=details",
+   "normalizedUrl": "https://www.whzbtbxt.cn/whebd#/cmsIndex?path=tendererNotice&id=202611241758140003&registrationId=202611241517502275&type=details",
+   "source": "whzbtb",
+   "region": "湖北武汉",
+   "industry": "房建",
+   "noticeType": "招标公告",
+   "tenderer": "武汉阳逻水乡度假村管理有限公司",
+   "publishTime": "2026-11-25",
+   "summary": "招标单位：武汉阳逻水乡度假村管理有限公司；投标截止：2026-12-16 09:59 | 评标办法：（适用于评定；评标办法：（适用于评定分离）武汉市建设工程工程总承包招标文件示范文本（综合评估法）"
+  },
+  {
+   "id": "3e094722818e9d3c",
    "title": "【HSBFC14-20260853】物理学院金工实验室供电线路改造采购公告",
    "url": "https://zb.ccnu.edu.cn/viewer.do?id=4074005&ver=2",
    "normalizedUrl": "https://zb.ccnu.edu.cn/viewer.do?id=4074005&ver=2",
@@ -31,33 +57,20 @@
    "summary": "【招标公告】（新）【快速采购】【HSBFC14-20260853】物理学院金工实验室供电线路改造采购公告 · 地区：湖北武汉 · 来源：ccnu-zb · 正文要点待补，以原文为准"
   },
   {
-   "id": "4083f9b8f000ec9a",
-   "title": "光互联核心基础元件研发及生产中心建设项目空调机组采购(HBSJ-202611FJ-228007001)招标公告",
-   "url": "https://www.hbbidcloud.cn/shengbenji/jyxx/004002/004002001/20261124/d22530f3-2519-475f-8a3b-7bfa1e622543.html",
-   "normalizedUrl": "https://www.hbbidcloud.cn/shengbenji/jyxx/004002/004002001/20261124/d22530f3-2519-475f-8a3b-7bfa1e622543.html",
-   "source": "hbbidcloud",
-   "region": "湖北",
+   "id": "d7a5cd8d4c2e0601",
+   "title": "图书馆采购34.54万册特价纸质图书公开招标公告",
+   "url": "http://www.jzggzy.com/jyxx/012002/012002001/20261125/226f195ed7f54d03bd70bff557db4681.html",
+   "normalizedUrl": "http://www.jzggzy.com/jyxx/012002/012002001/20261125/226f195ed7f54d03bd70bff557db4681.html",
+   "source": "jingzhou-ggzy",
+   "region": "湖北荆州",
    "industry": "房建",
    "noticeType": "招标公告",
    "tenderer": "—",
-   "publishTime": "2026-11-24",
-   "summary": "【招标公告】光互联核心基础元件研发及生产中心建设项目空调机组采购(HBSJ-202611FJ-228007001)招标公告 · 地区：湖北 · 来源：hbbidcloud · 正文要点待补，以原文为准"
+   "publishTime": "2026-11-25",
+   "summary": "一、项目基本情况 1. 项目编号：JZSJ-202611-FS030 2. 采购计划备案号：421000-2026-01517 3. 项目名称：图书馆采购34.54万册特价纸质图书 4. 采购方式：公…"
   },
   {
-   "id": "ce61c15198649c72",
-   "title": "湖北第二师范学院数智光电产教融合基地项目监理服务(HBSJ-202610FJ-207002001)招标公告",
-   "url": "https://www.hbbidcloud.cn/shengbenji/jyxx/004002/004002001/20261124/0a64fad3-3781-4eb4-a92c-6758f58cbc12.html",
-   "normalizedUrl": "https://www.hbbidcloud.cn/shengbenji/jyxx/004002/004002001/20261124/0a64fad3-3781-4eb4-a92c-6758f58cbc12.html",
-   "source": "hbbidcloud",
-   "region": "湖北",
-   "industry": "房建",
-   "noticeType": "招标公告",
-   "tenderer": "—",
-   "publishTime": "2026-11-24",
-   "summary": "【招标公告】湖北第二师范学院数智光电产教融合基地项目监理服务(HBSJ-202610FJ-207002001)招标公告 · 地区：湖北 · 来源：hbbidcloud · 正文要点待补，以原文为准"
-  },
-  {
-   "id": "db3a85b74a851b9f",
+   "id": "4f09c460ccb4e18f",
    "title": "光互联核心基础元件研发及生产中心建设项目工程总承包（EPC）第1次资审答疑(标段编号HBSJ-202611FJ-228001001)",
    "url": "https://www.hbbidcloud.cn/shengbenji/jyxx/004003/004003001/20261124/8d2aab6e-897d-4e41-a3d2-7eb100b06661.html",
    "normalizedUrl": "https://www.hbbidcloud.cn/shengbenji/jyxx/004003/004003001/20261124/8d2aab6e-897d-4e41-a3d2-7eb100b06661.html",
@@ -67,10 +80,10 @@
    "noticeType": "答疑公告",
    "tenderer": "—",
    "publishTime": "2026-11-24",
-   "summary": "【答疑公告】光互联核心基础元件研发及生产中心建设项目工程总承包（EPC）第1次资审答疑(标段编号HBSJ-202611FJ-228001001) · 地区：湖北 · 来源：hbbidcloud · 正文要点待补，以原文为准"
+   "summary": ""
   },
   {
-   "id": "208ea494452bc039",
+   "id": "f7124660b57de87e",
    "title": "【HSAFC14-20260831】北大门孵化科技楼9楼文化墙改造项目采购公告",
    "url": "https://zb.ccnu.edu.cn/viewer.do?id=4073987&ver=2",
    "normalizedUrl": "https://zb.ccnu.edu.cn/viewer.do?id=4073987&ver=2",
@@ -83,7 +96,85 @@
    "summary": "【招标公告】（新）【快速采购】【HSAFC14-20260831】北大门孵化科技楼9楼文化墙改造项目采购公告 · 地区：湖北武汉 · 来源：ccnu-zb · 正文要点待补，以原文为准"
   },
   {
-   "id": "4c89667de16c7642",
+   "id": "4a3ebf515f2e2a8d",
+   "title": "光互联核心基础元件研发及生产中心建设项目空调机组采购(HBSJ-202611FJ-228007001)招标公告",
+   "url": "https://www.hbbidcloud.cn/shengbenji/jyxx/004002/004002001/20261124/d22530f3-2519-475f-8a3b-7bfa1e622543.html",
+   "normalizedUrl": "https://www.hbbidcloud.cn/shengbenji/jyxx/004002/004002001/20261124/d22530f3-2519-475f-8a3b-7bfa1e622543.html",
+   "source": "hbbidcloud",
+   "region": "湖北",
+   "industry": "房建",
+   "noticeType": "招标公告",
+   "tenderer": "—",
+   "publishTime": "2026-11-24",
+   "summary": "【招标公告】光互联核心基础元件研发及生产中心建设项目空调机组采购(HBSJ-202611FJ-228007001)招标公告 · 地区：湖北 · 来源：hbbidcloud · 正文要点待补，以原文为准"
+  },
+  {
+   "id": "dc6bf26dc2351353",
+   "title": "湖北第二师范学院数智光电产教融合基地项目监理服务(HBSJ-202610FJ-207002001)招标公告",
+   "url": "https://www.hbbidcloud.cn/shengbenji/jyxx/004002/004002001/20261124/0a64fad3-3781-4eb4-a92c-6758f58cbc12.html",
+   "normalizedUrl": "https://www.hbbidcloud.cn/shengbenji/jyxx/004002/004002001/20261124/0a64fad3-3781-4eb4-a92c-6758f58cbc12.html",
+   "source": "hbbidcloud",
+   "region": "湖北",
+   "industry": "房建",
+   "noticeType": "招标公告",
+   "tenderer": "—",
+   "publishTime": "2026-11-24",
+   "summary": "【招标公告】湖北第二师范学院数智光电产教融合基地项目监理服务(HBSJ-202610FJ-207002001)招标公告 · 地区：湖北 · 来源：hbbidcloud · 正文要点待补，以原文为准"
+  },
+  {
+   "id": "ca28cf263df1ae98",
+   "title": "张之洞与武汉博物馆维修改造项目初步设计（评定分离）",
+   "url": "https://www.whzbtbxt.cn/whebd/#/cmsIndex?path=tendererNotice&id=202611241528152359&registrationId=202611241125312611&type=details",
+   "normalizedUrl": "https://www.whzbtbxt.cn/whebd#/cmsIndex?path=tendererNotice&id=202611241528152359&registrationId=202611241125312611&type=details",
+   "source": "whzbtb",
+   "region": "湖北武汉",
+   "industry": "房建",
+   "noticeType": "招标公告",
+   "tenderer": "武汉城建集团建设管理有限公司",
+   "publishTime": "2026-11-24",
+   "summary": "招标单位：武汉城建集团建设管理有限公司；投标截止：2026-11-30 20:00"
+  },
+  {
+   "id": "e8cc138ae88c6ddd",
+   "title": "郷伴慈惠农文旅融合村湾建设项目设计施工总承包",
+   "url": "https://www.whzbtbxt.cn/whebd/#/cmsIndex?path=tendererNotice&id=202611241620260952&registrationId=202611241100262784&type=details",
+   "normalizedUrl": "https://www.whzbtbxt.cn/whebd#/cmsIndex?path=tendererNotice&id=202611241620260952&registrationId=202611241100262784&type=details",
+   "source": "whzbtb",
+   "region": "湖北武汉",
+   "industry": "房建",
+   "noticeType": "招标公告",
+   "tenderer": "—",
+   "publishTime": "2026-11-24",
+   "summary": "投标截止：2026-12-16 09:29 | 评标办法：（适用于评定；评标办法：（适用于评定分离）武汉市建设工程工程总承包招标文件示范文本（综合评估法）"
+  },
+  {
+   "id": "c9429428b303a22b",
+   "title": "沙口新家园老旧小区改造项目EPC（评定分离）",
+   "url": "https://www.whzbtbxt.cn/whebd/#/cmsIndex?path=tendererNotice&id=202611241823210256&registrationId=202611231412537677&type=details",
+   "normalizedUrl": "https://www.whzbtbxt.cn/whebd#/cmsIndex?path=tendererNotice&id=202611241823210256&registrationId=202611231412537677&type=details",
+   "source": "whzbtb",
+   "region": "湖北武汉",
+   "industry": "房建",
+   "noticeType": "招标公告",
+   "tenderer": "武汉长江新区科教产业创新发展有限公司",
+   "publishTime": "2026-11-24",
+   "summary": "招标单位：武汉长江新区科教产业创新发展有限公司；投标截止：2026-12-15 09:59 | 评标办法：（适用于评定；评标办法：（适用于评定分离）武汉市建设工程工程总承包招标文件示范文本（综合评估法）"
+  },
+  {
+   "id": "e8eb1ae9d25ae5c0",
+   "title": "荆州市城市更新行动顶层机制构建及全过程动态跟踪评估项目公开招标公告",
+   "url": "http://www.jzggzy.com/jyxx/012002/012002001/20261124/e0490adb6e5e4eeab02630986be27e9c.html",
+   "normalizedUrl": "http://www.jzggzy.com/jyxx/012002/012002001/20261124/e0490adb6e5e4eeab02630986be27e9c.html",
+   "source": "jingzhou-ggzy",
+   "region": "湖北荆州",
+   "industry": "房建",
+   "noticeType": "招标公告",
+   "tenderer": "—",
+   "publishTime": "2026-11-24",
+   "summary": "【招标公告】荆州市城市更新行动顶层机制构建及全过程动态跟踪评估项目公开招标公告 · 地区：湖北荆州 · 来源：jingzhou-ggzy · 正文要点待补，以原文为准"
+  },
+  {
+   "id": "63c6ee4f60b0288e",
    "title": "融通地产（广东）有限责任公司深圳市罗湖区红岗路1157号项目施工总承包工程公开招标公告",
    "url": "https://www.ronghw.cn/web-portal/index.html#/trade-info-detail?id=1574449433573687297&publishStatus=1&noticeType=1",
    "normalizedUrl": "https://www.ronghw.cn/web-portal/index.html#/trade-info-detail?id=1574449433573687297&publishStatus=1&noticeType=1",
@@ -96,20 +187,7 @@
    "summary": "【招标公告】融通地产（广东）有限责任公司深圳市罗湖区红岗路1157号项目施工总承包工程公开招标公告 · 地区：全国 · 来源：ronghw ·"
   },
   {
-   "id": "b237e42792c85766",
-   "title": "湖北城市建设职业技术学院现代物流生产性实训基地厂房建设项目现代物流生产性实训基地厂房建设工程总承包（EPC）第2次答疑(标段编号HBSJ-202611FJ-229001001)",
-   "url": "https://www.hbbidcloud.cn/shengbenji/jyxx/004003/004003001/20261123/24fe027c-a59e-4c95-8e57-972c5483d1c7.html",
-   "normalizedUrl": "https://www.hbbidcloud.cn/shengbenji/jyxx/004003/004003001/20261123/24fe027c-a59e-4c95-8e57-972c5483d1c7.html",
-   "source": "hbbidcloud",
-   "region": "湖北",
-   "industry": "房建",
-   "noticeType": "答疑公告",
-   "tenderer": "—",
-   "publishTime": "2026-11-23",
-   "summary": "【答疑公告】湖北城市建设职业技术学院现代物流生产性实训基地厂房建设项目现代物流生产性实训基地厂房建设工程总承包（EPC）第2次答疑(标段编号HBSJ-202611FJ-229001001) · 地区：湖北 · 来源：hbbidcloud · 正文要点待补，以原文为准"
-  },
-  {
-   "id": "06280d3ee6cb3cb2",
+   "id": "140ec7c6e7c2f832",
    "title": "湖北省教育考试院友谊大道院区9号楼维修改造(HBSJ-202611FJ-234001001)招标公告",
    "url": "https://www.hbbidcloud.cn/shengbenji/jyxx/004002/004002001/20261123/ff55a2b5-8302-47e7-9e24-701b715f934d.html",
    "normalizedUrl": "https://www.hbbidcloud.cn/shengbenji/jyxx/004002/004002001/20261123/ff55a2b5-8302-47e7-9e24-701b715f934d.html",
@@ -117,12 +195,12 @@
    "region": "湖北",
    "industry": "房建",
    "noticeType": "招标公告",
-   "tenderer": "—",
+   "tenderer": "湖北省教育考试院",
    "publishTime": "2026-11-23",
-   "summary": "【招标公告】湖北省教育考试院友谊大道院区9号楼维修改造(HBSJ-202611FJ-234001001)招标公告 · 地区：湖北 · 来源：hbbidcloud · 正文要点待补，以原文为准"
+   "summary": "招标单位：湖北省教育考试院；招标范围：施工图和工程量清单范围内全部内容 标段划分：1个标段 计划工期：100日历天，计划开工日期2026年12月 合同估算价：454.00万元 2.3其他：/ 3.投标人资格要求 3.1…；建设规模：工程预估造价约454万元人民币；投标截止：202"
   },
   {
-   "id": "d1cf0bad2dbe1593",
+   "id": "3972a02d044d77b7",
    "title": "森源公司食药用菌研产销一体化项目设备采购6标段(第二次)第1次答疑(标段编号HBSJ-202505FJ-106003011)",
    "url": "https://www.hbbidcloud.cn/shengbenji/jyxx/004003/004003001/20261123/61c86f76-9422-4e63-b1f9-72e83f9a5ad4.html",
    "normalizedUrl": "https://www.hbbidcloud.cn/shengbenji/jyxx/004003/004003001/20261123/61c86f76-9422-4e63-b1f9-72e83f9a5ad4.html",
@@ -135,20 +213,7 @@
    "summary": "【答疑公告】森源公司食药用菌研产销一体化项目设备采购6标段(第二次)第1次答疑(标段编号HBSJ-202505FJ-106003011) · 地区：湖北 · 来源：hbbidcloud · 正文要点待补，以原文为准"
   },
   {
-   "id": "7b34bb8475ea5bf4",
-   "title": "【HSBFC14-20260820】南湖综合楼11楼配电改造采购公告",
-   "url": "https://zb.ccnu.edu.cn/viewer.do?id=4073971&ver=2",
-   "normalizedUrl": "https://zb.ccnu.edu.cn/viewer.do?id=4073971&ver=2",
-   "source": "ccnu-zb",
-   "region": "湖北武汉",
-   "industry": "房建",
-   "noticeType": "招标公告",
-   "tenderer": "华中师范大学",
-   "publishTime": "2026-11-23",
-   "summary": "【招标公告】（新）【快速采购】【HSBFC14-20260820】南湖综合楼11楼配电改造采购公告 · 地区：湖北武汉 · 来源：ccnu-zb · 正文要点待补，以原文为准"
-  },
-  {
-   "id": "771d960514bb3a50",
+   "id": "825269317feddd22",
    "title": "法雷奥智慧车载照明未来工厂项目设计施工总承包（EPC）-评定分离",
    "url": "https://www.whzbtbxt.cn/whebd/#/cmsIndex?path=tendererNotice&id=202611231919103258&registrationId=202611231147210299&type=details",
    "normalizedUrl": "https://www.whzbtbxt.cn/whebd#/cmsIndex?path=tendererNotice&id=202611231919103258&registrationId=202611231147210299&type=details",
@@ -161,7 +226,7 @@
    "summary": "招标单位：武汉经开绿岛实业发展有限公司；投标截止：2026-11-30 21:00"
   },
   {
-   "id": "8b331acd1fdd5619",
+   "id": "922d2bff4b0b3512",
    "title": "东西湖区既有住宅小区电梯加装项目（一期）EPC（评定分离）",
    "url": "https://www.whzbtbxt.cn/whebd/#/cmsIndex?path=tendererNotice&id=202611231721150430&registrationId=202611191807291658&type=details",
    "normalizedUrl": "https://www.whzbtbxt.cn/whebd#/cmsIndex?path=tendererNotice&id=202611231721150430&registrationId=202611191807291658&type=details",
@@ -174,7 +239,20 @@
    "summary": "招标单位：武汉市园林建设管理有限公司；投标截止：2026-11-30 18:00"
   },
   {
-   "id": "230faac459792448",
+   "id": "879e1f8d75a5f825",
+   "title": "【HSBFC14-20260820】南湖综合楼11楼配电改造采购公告",
+   "url": "https://zb.ccnu.edu.cn/viewer.do?id=4073971&ver=2",
+   "normalizedUrl": "https://zb.ccnu.edu.cn/viewer.do?id=4073971&ver=2",
+   "source": "ccnu-zb",
+   "region": "湖北武汉",
+   "industry": "房建",
+   "noticeType": "招标公告",
+   "tenderer": "华中师范大学",
+   "publishTime": "2026-11-23",
+   "summary": "【招标公告】（新）【快速采购】【HSBFC14-20260820】南湖综合楼11楼配电改造采购公告 · 地区：湖北武汉 · 来源：ccnu-zb · 正文要点待补，以原文为准"
+  },
+  {
+   "id": "6ce8d733a29d41f2",
    "title": "特警宿舍楼维修项目公告",
    "url": "https://www.ccgp-hubei.gov.cn/notice/202611/notice_2d8d09810a0892a1bd19ae37505866fc.html",
    "normalizedUrl": "https://www.ccgp-hubei.gov.cn/notice/202611/notice_2d8d09810a0892a1bd19ae37505866fc.html",
@@ -185,6 +263,32 @@
    "tenderer": "—",
    "publishTime": "2026-11-23",
    "summary": "【招标公告】特警宿舍楼维修项目公告 · 地区：湖北 · 来源：ccgp-hubei · 正文要点待补，以原文为准"
+  },
+  {
+   "id": "acb26a2e94e39e1a",
+   "title": "湖北城市建设职业技术学院现代物流生产性实训基地厂房建设项目现代物流生产性实训基地厂房建设工程总承包（EPC）第2次答疑(标段编号HBSJ-202611FJ-229001001)",
+   "url": "https://www.hbbidcloud.cn/shengbenji/jyxx/004003/004003001/20261123/24fe027c-a59e-4c95-8e57-972c5483d1c7.html",
+   "normalizedUrl": "https://www.hbbidcloud.cn/shengbenji/jyxx/004003/004003001/20261123/24fe027c-a59e-4c95-8e57-972c5483d1c7.html",
+   "source": "hbbidcloud",
+   "region": "湖北",
+   "industry": "房建",
+   "noticeType": "答疑公告",
+   "tenderer": "—",
+   "publishTime": "2026-11-23",
+   "summary": "【答疑公告】湖北城市建设职业技术学院现代物流生产性实训基地厂房建设项目现代物流生产性实训基地厂房建设工程总承包（EPC）第2次答疑(标段编号HBSJ-202611FJ-229001001) · 地区：湖北 · 来源：hbbidcloud · 正文要点待补，以原文为准"
+  },
+  {
+   "id": "a5dfeadfbf8e9984",
+   "title": "治安支队业务用房维修项目公告",
+   "url": "https://www.ccgp-hubei.gov.cn/notice/202611/notice_230686f471cc8c3913932964c884f060.html",
+   "normalizedUrl": "https://www.ccgp-hubei.gov.cn/notice/202611/notice_230686f471cc8c3913932964c884f060.html",
+   "source": "ccgp-hubei",
+   "region": "湖北",
+   "industry": "房建",
+   "noticeType": "招标公告",
+   "tenderer": "—",
+   "publishTime": "2026-11-23",
+   "summary": "【招标公告】治安支队业务用房维修项目公告 · 地区：湖北 · 来源：ccgp-hubei · 正文要点待补，以原文为准"
   }
  ]
 }
