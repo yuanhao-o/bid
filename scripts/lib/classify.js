@@ -236,15 +236,18 @@ function workTypeOf(item) {
   return { label: '未识别', by: '' };
 }
 
-/* ---------------- 推送口径：只推「房建 + 招标/澄清类公告」 ---------------- */
-/* 房建 = 行业判定为「房建」。市政（道路管网）、交通、水利、铁路、土地整治一律不推。
-   类型白名单：招标公告 + 答疑/澄清/更正/变更/补遗。
-   为什么带答疑类：用户 2026-11-11 拍板「已推过的房建项目，之后出答疑/澄清要补推一条」。
-   这些公告本身就挂在房建项目下，行业判定已经把它们圈住了，数量约 0.8 条/天，不会刷屏。
-   中标、评标、合同公示、流标、报建这些仍然只进网页。 */
+/* ---------------- 推送口径（2026-11-28 用户重定） ---------------- */
+/* 四道闸：公告类型 × 行业 × 业务类型 × 关键词。前三项在这里，关键词留给下游（Actions 可选词 / 云端订阅词）。
+   公告类型：招标公告、项目报建、资格预审、竞价、谈判、询价、遴选、通用采购、比选。
+   行业：房建、政府采购。业务：施工、EPC/总承包。
+   答疑/更正/变更/延期/澄清、中标、评标、合同、流标等只进网页，不进企微。 */
 const PUSH_TYPES = {
-  '招标公告': 1, '答疑公告': 1, '澄清公告': 1, '更正公告': 1, '变更公告': 1, '补遗公告': 1, '延期公告': 1
+  '招标公告': 1, '项目报建公告': 1, '资格预审公告': 1, '竞价公告': 1, '谈判公告': 1,
+  '询价公告': 1, '遴选公告': 1, '通用采购公告': 1, '比选公告': 1
 };
+const PUSH_INDUSTRIES = { '房建': 1, '政府采购': 1 };
+const PUSH_WORK_TYPES = { '施工': 1, 'EPC/总承包': 1 };
+const PUSH_KEYWORDS = ['装饰', '装修', '维修', '改造', '大中修', '改扩建', 'EPC', '总承包'];
 
 function isHouseBuild(item) {
   return industryOf(item) === '房建';
@@ -255,9 +258,9 @@ function isTenderNotice(item) {
 function isPushType(item) {
   return !!PUSH_TYPES[typeOf(item)];
 }
-/* 推送候选：类型与行业都过闸 */
+/* 推送候选：公告类型 × 行业 × 业务类型（关键词由下游再判） */
 function isPushCandidate(item) {
-  return isPushType(item) && isHouseBuild(item);
+  return isPushType(item) && !!PUSH_INDUSTRIES[item && item.industry] && !!PUSH_WORK_TYPES[item && item.workType];
 }
 
 module.exports = {
@@ -266,5 +269,5 @@ module.exports = {
   workTypeOf, WORK_TYPES, WORK_TYPE_RULES,
   ownerOf,
   isHouseBuild, isTenderNotice, isPushType, isPushCandidate,
-  CAT_TYPE, SUB_INDUSTRY, PUSH_TYPES, SOURCE_OWNER
+  CAT_TYPE, SUB_INDUSTRY, PUSH_TYPES, PUSH_INDUSTRIES, PUSH_WORK_TYPES, PUSH_KEYWORDS, SOURCE_OWNER
 };

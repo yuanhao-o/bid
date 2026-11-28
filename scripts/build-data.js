@@ -30,7 +30,7 @@ const DELTA_SNAP = 0;                                       // 云函数 3 秒�
 const DELTA_MAX = 24;                                       // 云函数一轮最多入库 20 条，留几条余量抵掉重复
 /* 推送口径（2026-11-11 用户定）：只推「招标公告 + 房建」。
    关键词留作第二道可选收窄：不传 PUSH_KEYWORDS（或传空串）= 不按关键词过滤。 */
-const DEFAULT_PUSH_KEYWORDS = '';
+const DEFAULT_PUSH_KEYWORDS = '装饰,装修,维修,改造,大中修,改扩建,EPC,总承包';
 const SEED_JSON = OUT_JSON;                                 // 用上一版补上超出抓取窗口的历史
 const SKIP_CLOUD = true;                                    // GitHub 上没有云端读取权限
 const FN = path.join(__dirname, 'lib', 'bidFetch.js');
@@ -358,6 +358,7 @@ async function cloudRows() {
       region: d.region || '',
       industry: d.industry || '',
       noticeType: d.noticeType || '',
+      workType: d.workType || '',
       tenderer: d.tenderer || '',
       publishTime: d.publishTime || '',
       summary: String(d.summary || '').slice(0, 140)

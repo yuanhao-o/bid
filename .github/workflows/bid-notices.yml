@@ -36,10 +36,9 @@ jobs:
       - name: 生成站点数据与增量文件
         run: node scripts/build-data.js
         env:
-          # 推送口径已由「招标公告 + 房建」两道闸决定（见 scripts/lib/classify.js）。
-          # 关键词只是可选的第三道收窄：留空 = 不按关键词筛，房建招标公告全给。
-          # 要收窄就填（逗号分隔），并同步改云端 bid_subscriptions 的 keywords，两边必须一致。
-          PUSH_KEYWORDS: ''
+          # 推送口径四道闸：公告类型 × 行业 × 业务类型 × 关键词（见 scripts/lib/classify.js）。
+          # 关键词留空 = 不按关键词筛；要与云端 bid_subscriptions.keywords 保持一致。
+          PUSH_KEYWORDS: '装饰,装修,维修,改造,大中修,改扩建,EPC,总承包'
           GOV_PAGES: '10'      # 湖北省政府采购网抓几页（每页 16 条）
 
       - name: 提交数据文件
